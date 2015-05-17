@@ -35,7 +35,7 @@ angular.module('myFitMate', ['ionic'])
   })
 
   //////////////////////////////////////
-  /////////////// MAP /////////////
+  /////////////// 0 MAP /////////////
   //////////////////////////////////////
   .state('findFit' {
     abstract: true,
@@ -53,7 +53,7 @@ angular.module('myFitMate', ['ionic'])
   })
 
   //////////////////////////////////////
-  /////////////// FIT MATE /////////////
+  /////////////// 1 FIT MATE /////////////
   //////////////////////////////////////
   .state('fitMate', {
     abstract: true,
@@ -77,7 +77,7 @@ angular.module('myFitMate', ['ionic'])
     templateUrl: "templates/fitMate-details.html"
   })
   //////////////////////////////////////
-  /////////////// FIT INFO /////////////
+  ///////////// 2 FIT INFO /////////////
   //////////////////////////////////////
   .state('fitInfo' {
     abstract: true,
@@ -94,11 +94,8 @@ angular.module('myFitMate', ['ionic'])
     url: "/receive/:locationId",
   })
 
-  
-  })
-
   //////////////////////////////////////
-  ///////////////  Consult  /////////////
+  /////////////// 3 Consult  ///////////
   //////////////////////////////////////
   .state('consult', {
     abstract: true,
@@ -108,28 +105,16 @@ angular.module('myFitMate', ['ionic'])
 
   .state('consult.list', {
     url: "/list",
-    views: {
-      "consultList": {
-        templateUrl: "templates/consult-list.html",
-      }
-    }
+    templateUrl: "templates/consult-list.html"
   })
   .state('consult.write', {
     url: "/write",
-    views: {
-      "consultList": {
-        templateUrl: "templates/consult-write.html"
-      }
-    }
+    templateUrl: "templates/consult-write.html"
   })
 
   .state('consult.details', {
     url: "/details",
-    views: {
-      "consultList": {
-        templateUrl: "templates/consult-details.html"
-      }
-    }
+    templateUrl: "templates/consult-details.html"
   })
   //////////////////////////////////////
   //////////////  Details  /////////////
@@ -143,28 +128,16 @@ angular.module('myFitMate', ['ionic'])
 
   .state('fitInfo.list', {
     url: "/list",
-    views: {
-      "fitInfoList": {
-        templateUrl: "templates/fitInfo-list.htmfitInfol"
-      }
-    }
+    templateUrl: "templates/fitInfo-list.htmfitInfol"
   })
   .state('fitInfo.write', {
     url: "/write",
-    views: {
-      "fitInfoList": {
-        templateUrl: "templates/fitInfo-write.html"
-      }
-    }
+    templateUrl: "templates/fitInfo-write.html"
   })
 
   .state('fitInfo.details', {
     url: "/details",
-    views: {
-      "fitInfoList": {
-        templateUrl: "templates/fitInfo-details.html"
-      }
-    }
+    templateUrl: "templates/fitInfo-details.html"
   })
 
   $urlRouterProvider.otherwise('/main');
