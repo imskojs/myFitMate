@@ -51,7 +51,7 @@ angular.module('myFitMate', ['ionic'])
   .state('findFit.receive', {
     url: "/receive/:locationId"
   })
-  
+
   //////////////////////////////////////
   /////////////// FIT MATE /////////////
   //////////////////////////////////////
@@ -64,29 +64,18 @@ angular.module('myFitMate', ['ionic'])
 
   .state('fitMate.list', {
     url: "/list",
-    views: {
-      "fitMateList": {
-        templateUrl: "templates/fitMate-list.html",
-      }
-    }
+    templateUrl: "templates/fitMate-list.html",
   })
 
   .state('fitMate.write', {
     url: "/write",
-    views: {
-      "fitMateList": {
-        templateUrl: "templates/fitMate-write.html"
-      }
-    }
+    templateUrl: "templates/fitMate-write.html"
   })
 
   .state('fitMate.details', {
-    url: "/details/:postId",
-    views: {
-      "fitMateList": {
-        templateUrl: "templates/fitMate-details.html"
-      }
-    }
+    url: "/details/:fitMatePostId",
+    templateUrl: "templates/fitMate-details.html"
+  })
   //////////////////////////////////////
   /////////////// FIT INFO /////////////
   //////////////////////////////////////
