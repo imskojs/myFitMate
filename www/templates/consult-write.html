@@ -1,0 +1,29 @@
+<ion-view view-title="상담 하기">
+
+  <ion-pane class="bg bg-sub2 row" padding=false>
+      <div class="col"></div>
+
+      <div class="col col-90">
+        <form novalidate>
+          <p class="form-label">제목</p>
+          <input type="text" ng-model="fitMateForm.title" placeholder="  제목을 입력해 주세요">
+          <p class="form-label">내용</p>
+          <textarea placeholder="내용을 입력해 주세요" ng-model="fitMateForm.content"></textarea>
+          <div class="row">
+          <div class="col"></div>
+            <div class="col col-40">
+              <button class="button button-clear" ui-sref="consult.details">들록하기</button>
+            </div>
+            <div class="col"></div>
+            <div class="col col-40">
+              <button class="button button-clear">최소하기</button>
+            </div>
+            <div class="col"></div>
+          </div>
+        </form>
+      </div>
+
+      <div class="col"></div>
+  </ion-pane>
+
+</ion-view>

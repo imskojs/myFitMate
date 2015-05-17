@@ -1,0 +1,63 @@
+<ion-view view-title="MYFITMATE">
+
+<!-- navBar change -->
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-navicon-round"></button>
+  </ion-nav-buttons>  
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-android-share-alt"></button>
+  </ion-nav-buttons>
+
+  <!-- Non-scrollable content main-container has bg-->
+  <ion-pane class="main-container">
+    <!-- Top bg -->
+    <div class="main-top-bg bg" image-height="50">
+    </div>
+    <div class="main-mid-bar bg">
+      <p>함께하는 운동은 즐겁다, 찾아줘 <span>MYFITMATE</span></p>
+    </div>
+      <div class="main-content">
+        
+        <a href="map.html" class="main-map-a">
+            <div class="pink-title">
+              <i class="main-dumbell pa"></i>
+              <p>헬스장 찾기</p>
+            </div>
+            <p class="pink-content">지도에서 헬스장 찾기</p>
+        </a> 
+        
+        <a ui-sref="fitMate.list">
+            <div class="pink-title">
+              <i class="main-location pa"></i>
+              <p> &nbsp;&nbsp;&nbsp;FIT MATE</p>
+            </div>
+            <p class="pink-content">MY FIT MATE  찾기</p>
+        </a>
+        
+        <a href="fit_info.html">
+            <div class="pink-title">
+              <i class="main-info pa"></i>
+              <p>&nbsp;&nbsp;&nbsp;운동 정보</p>
+            </div>
+            <p class="pink-content">운동 분야별 정보, TIP</p>
+        </a>
+        
+        <a ui-sref="consult.list">
+            <div class="pink-title">
+              <i class="main-qa pa"></i>
+              <p>&nbsp;&nbsp;&nbsp;상담 하기</p>
+            </div>
+            <p class="pink-content">트레이너와 상담 하기</p>
+        </a>
+        
+        <a href="event_menu.html">
+            <div class="pink-title">
+              <i class="main-event pa"></i>
+              <p>&nbsp;&nbsp;&nbsp;이벤트</p>
+            </div>
+            <p class="pink-content">자체 / 제휴업체 EVENT</p>
+        </a>
+        
+      </div>
+  </ion-pane>
+</ion-view>

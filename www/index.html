@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myFitMate">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">   
+    <link href="css/ionic.app.custom.addition.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- <link href="css/ionic.app.min.css" rel="stylesheet"> -->
+   
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/mainController.js"></script>
+    <script src="js/controllers/fitMateListController.js"></script>
+    <script src="js/controllers/fitInfoListController.js"></script>
+    <script src="js/controllers/categoryMenuController.js"></script>
+    <script src="js/controllers/fitMateFormController.js"></script>
+    <script src="js/services/locationData.js"></script>
+    <script src="js/services/postData.js"></script>
+    <script src="js/services/koStateChangeUtility.js"></script>
+  </head>
+  <body ng-controller="MainController">
+
+    <ion-nav-bar class="bar-positive" align-title="center" ng-class="{'transparent-background': transparentBackground}">
+      <ion-nav-back-button>
+      </ion-nav-back-button> 
+    </ion-nav-bar>
+
+    <ion-nav-view></ion-nav-view>
+
+  </body>
+</html>
