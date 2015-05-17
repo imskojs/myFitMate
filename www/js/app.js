@@ -37,7 +37,7 @@ angular.module('myFitMate', ['ionic'])
   //////////////////////////////////////
   /////////////// 0 MAP /////////////
   //////////////////////////////////////
-  .state('findFit' {
+  .state('findFit', {
     abstract: true,
     url: '/findFit'
   })
@@ -78,8 +78,8 @@ angular.module('myFitMate', ['ionic'])
   })
   //////////////////////////////////////
   ///////////// 2 FIT INFO /////////////
-  //////////////////////////////////////
-  .state('fitInfo' {
+  ////////////////////////////////////// 
+  .state('fitInfo', {
     abstract: true,
     url: '/fintInfo'
   })
@@ -117,28 +117,25 @@ angular.module('myFitMate', ['ionic'])
     templateUrl: "templates/consult-details.html"
   })
   //////////////////////////////////////
-  //////////////  Details  /////////////
+  //////////////  4 Event  /////////////
   //////////////////////////////////////
-  .state('fitInfo', {
+  .state('event', {
     abstract: true,
     url: "/fitInfo",
     templateUrl: "templates/fitInfo.html",
     controller: "FitInfoListController"
   })
 
-  .state('fitInfo.list', {
-    url: "/list",
-    templateUrl: "templates/fitInfo-list.htmfitInfol"
+  .state('event.list', {
+    url: "/list"
   })
-  .state('fitInfo.write', {
-    url: "/write",
-    templateUrl: "templates/fitInfo-write.html"
+  .state('event.write', {
+    url: "/write"
   })
 
-  .state('fitInfo.details', {
-    url: "/details",
-    templateUrl: "templates/fitInfo-details.html"
-  })
+  .state('event.details', {
+    url: "/details"
+  });
 
   $urlRouterProvider.otherwise('/main');
-})
+});
