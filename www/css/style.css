@@ -63,6 +63,18 @@
   .buttons.buttons-right .icon:before {
     /* right icon style*/
   }
+  /* LEFT BUTTON*/
+  /*left button position top and bottom should be with height of icon*/
+  /* Left button unverified.*/
+  .buttons.buttons-left {
+    /*top:0 !important; right:0 !important; bottom:0 !important;*/
+  }
+  .buttons.buttons-left .icon {
+    /* right icon container style*/
+  }
+  .buttons.buttons-left .icon:before {
+    /* right icon style*/
+  }
 
   /* BACK BUTTON */
   .bar.bar-header .back-button{
@@ -87,9 +99,6 @@
   }
 
 
-
-
-
   /****** Unnecessary Header elements ******/
   .bar .buttons-right span {
     margin-left: 0;
@@ -102,18 +111,11 @@
 
 /* subheader style */
 .bar-subheader {
+  /*Should be the height of header bar*/
   background: #434252;
   top: 15.5vw;
 }
 
-/*ion-content*/
-ion-content.has-header {
-  top: 15.5vw;
-}
-
-ion-content.has-subheader {
-  top: 31vw;
-}
 
 .bar-subheader h2 {
   font-size: 1rem;
@@ -124,6 +126,14 @@ ion-content.has-subheader {
 }
 
 
+/*ion-content*/
+ion-content.has-header {
+  top: 15.5vw;
+}
+
+ion-content.has-subheader {
+  top: 31vw;
+}
 /* backgrounds */
 .bg-list {
   background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
