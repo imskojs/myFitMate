@@ -30,7 +30,7 @@ angular.module('myFitMate', ['ionic'])
 
   .state('main', {
     url: "/main",
-    templateUrl: "templates/main.html",
+    templateUrl: "states/main.html",
     controller: 'MainController'
   })
 
@@ -58,23 +58,23 @@ angular.module('myFitMate', ['ionic'])
   .state('fitMate', {
     abstract: true,
     url: "/fitMate",
-    templateUrl: "templates/fitMate.html",
+    templateUrl: "states/fitMate/fitMate.html",
     controller: "FitMateListController"
   })
 
   .state('fitMate.list', {
     url: "/list",
-    templateUrl: "templates/fitMate-list.html",
+    templateUrl: "states/fitMate/fitMate-list.html",
   })
 
   .state('fitMate.write', {
     url: "/write",
-    templateUrl: "templates/fitMate-write.html"
+    templateUrl: "states/fitMate/fitMate-write.html"
   })
 
   .state('fitMate.details', {
     url: "/details/:fitMatePostId",
-    templateUrl: "templates/fitMate-details.html"
+    templateUrl: "states/fitMate/fitMate-details.html"
   })
   //////////////////////////////////////
   ///////////// 2 FIT INFO /////////////
@@ -100,41 +100,39 @@ angular.module('myFitMate', ['ionic'])
   .state('consult', {
     abstract: true,
     url: "/consult",
-    templateUrl: "templates/consult.html"
+    templateUrl: "states/consult/consult.html"
   })
 
   .state('consult.list', {
     url: "/list",
-    templateUrl: "templates/consult-list.html"
+    templateUrl: "states/consult/consult-list.html"
   })
   .state('consult.write', {
     url: "/write",
-    templateUrl: "templates/consult-write.html"
+    templateUrl: "states/consult/consult-write.html"
   })
 
   .state('consult.details', {
     url: "/details",
-    templateUrl: "templates/consult-details.html"
+    templateUrl: "states/consult/consult-details.html"
   })
   //////////////////////////////////////
   //////////////  4 Event  /////////////
   //////////////////////////////////////
   .state('event', {
     abstract: true,
-    url: "/fitInfo",
-    templateUrl: "templates/fitInfo.html",
-    controller: "FitInfoListController"
+    url: "/event"
   })
 
   .state('event.list', {
-    url: "/list"
+    url: "/event"
   })
   .state('event.write', {
-    url: "/write"
+    url: "/event"
   })
 
   .state('event.details', {
-    url: "/details"
+    url: "/event"
   });
 
   $urlRouterProvider.otherwise('/main');

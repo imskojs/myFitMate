@@ -1,15 +1,118 @@
 /****************************************
    Project Specific General Styles 
 ****************************************/
-/* backgrounds */
-.bg-list {
-  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
-  background-size: cover;
+
+/**************************************/
+/***************HEADER*****************/
+/**************************************/
+/* ion-nav-bar background style */
+/* header bar background*/
+.bar-positive .nav-bar-block ion-header-bar{
+  background-color: #f14182;
+  height: 15.5vw;
+  padding: 0;
 }
+.transparent-background .nav-bar-block ion-header-bar {
+    background-color: transparent;
+}
+  /* header-title style */
+  .bar.bar-header .title {
+    line-height: 15.5vw;
+    height: 15.5vw;
+    font-size: 4.9vw;
+  }
+  /* android styles again, apple doesn't for title */
+  .platform-android .bar .title {
+    line-height: 15.5vw;
+    height: 15.5vw;
+    font-size: 4.9vw;
+  }
+  /* General header icon container size, 
+     for layout use  button-right
+     , button-lect, and back-button
+   */
+  .bar.bar-header .icon {
+    display: block;
+    padding: 0;
+    margin: 0 1vw;
+    border: 0;
+    /* @header */
+    width: 15.5vw;
+    height: 15.5vw;
+    vertical-align: middle;
+  }
+  /* General icon font-image size */
+  .bar.bar-header .icon:before{
+    font-size: 6vw;
+    /*@header*/
+    line-height: 15.5vw !important;
+    vertical-align: middle !important;
+  }
+  .bar.bar-header .icon:after{
+    height: 0;
+  }
+
+  /* RIGHT BUTTON*/
+  /*right button position top and bottom should be with height of icon*/
+  .buttons.buttons-right {
+    top:0 !important; right:0 !important; bottom:0 !important;
+  }
+  .buttons.buttons-right .icon {
+    /* right icon container style*/
+  }
+  .buttons.buttons-right .icon:before {
+    /* right icon style*/
+  }
+
+  /* BACK BUTTON */
+  .bar.bar-header .back-button{
+    border:0;
+    margin: 0;
+    /* same as .bar.barheader .icon margin-left part*/
+    margin-left: 1vw;
+    width: 15.5vw;
+    height: 15.5vw;
+    padding-bottom: 15.5vw; 
+  }
+  .bar.bar-header .back-button .icon {
+    /*back icon container style*/
+  }
+
+  .bar.bar-header .back-button .icon:before {
+    /*back icon style*/
+  }
+
+  .bar.bar-header .back-button:after {
+    height: 0 !important;
+  }
+
+
+
+
+
+  /****** Unnecessary Header elements ******/
+  .bar .buttons-right span {
+    margin-left: 0;
+  }
+  /*disable iphone back text*/
+  span.back-text {
+    display: none !important;
+  }
+
 
 /* subheader style */
 .bar-subheader {
   background: #434252;
+  top: 15.5vw;
+}
+
+/*ion-content*/
+ion-content.has-header {
+  top: 15.5vw;
+}
+
+ion-content.has-subheader {
+  top: 31vw;
 }
 
 .bar-subheader h2 {
@@ -20,14 +123,23 @@
   font-weight: normal;
 }
 
+
+/* backgrounds */
+.bg-list {
+  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
+  background-size: cover;
+}
+
 /* list style */
 
 .list li {
-  padding: 6px 0 0;
+  height: 18.7vw;
+  padding: 3vw 0 3vw;
   border-bottom: 1px solid #2e4b96;
+  font-size: 3.5vw;
 }
 .list h3 {
-  font-size: 1.1rem;
+  font-size: 5vw;
 }
 .list span {
   color: #2e4b96;
@@ -86,14 +198,6 @@ input {
 }
 
 
-/* ion-nav-bar background style */
-/* header bar background*/
-.bar-positive .nav-bar-block ion-header-bar{
-  background-color: #f14182;
-}
-.transparent-background .nav-bar-block ion-header-bar {
-    background-color: transparent;
-}
 
 /********************************************
                   main.html
@@ -417,3 +521,5 @@ input {
   font-size: .8rem;
   line-height: 120%;
 }
+
+

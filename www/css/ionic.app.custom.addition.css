@@ -12,9 +12,6 @@ a:-webkit-any-link{
 /*************************************
               Layouts 
 *************************************/
-html, body, ion-nav-view {
-  height: 100%;
-}
 
 form {
   margin: 0;

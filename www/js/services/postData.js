@@ -180,4 +180,4 @@ angular.module('myFitMate')
   return {
     posts: posts 
   };
-})
+});
