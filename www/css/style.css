@@ -17,6 +17,8 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: #f14182;
   height: 15.5vw;
   padding: 0;
+  border: 0;
+  margin: 0;
 }
 .transparent-background .nav-bar-block ion-header-bar {
     background-color: transparent;
@@ -26,6 +28,7 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 15.5vw;
     height: 15.5vw;
     font-size: 4.9vw;
+    vertical-align: middle !important;
   }
   /* android styles again, apple doesn't for title */
   .platform-android .bar .title {
@@ -44,7 +47,7 @@ h1, h2, h3, h4, h5, h6, p {
   .bar.bar-header .icon {
     display: block;
     padding: 0;
-    margin: 0 1vw;
+    margin: 0;
     border: 0;
     /* @header */
     width: 15.5vw;
@@ -70,7 +73,7 @@ h1, h2, h3, h4, h5, h6, p {
   .bar.bar-header .buttons.buttons-right {
     width: 15.5vw;
     height: 15.5vw;
-    top:0 !important; right:1vw !important; bottom:0 !important;
+    top:0 !important; right:1w !important; bottom:0 !important;
   }
   .bar.bar-header .buttons.buttons-right *{
     width: 15.5vw;
@@ -344,7 +347,7 @@ ion-content.has-subheader {
 }
 #fitMate .active {
   background: white;
-  border-bottom: 1.1vw solid #098295;
+  border-bottom: 1.2vw solid #098295;
 }
 #fitMate .active h2{
   color: #1d8fb3;
