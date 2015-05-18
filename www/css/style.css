@@ -109,15 +109,20 @@
   }
 
 
-/* subheader style */
-.bar-subheader {
-  /*Should be the height of header bar*/
+/********************************************/
+/****************  SUB HEADER ***************/
+/********************************************/
+.bar.bar-subheader {
   background: #434252;
+  /* Top should be the height of header bar */
   top: 15.5vw;
+  height: 10.56vw;
+  padding: 0;
+  margin: 0;
 }
 
 
-.bar-subheader h2 {
+.bar.bar-subheader h2 {
   font-size: 1rem;
   text-align: center;
   padding-top: 10px;
@@ -337,9 +342,6 @@ input {
 }
 
 /* tab animation style */
-.location-wrapper {
-  overflow: hidden;
-}
 .location-ul {
   width: 400%;
   background: #434252;
