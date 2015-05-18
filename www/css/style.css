@@ -1,6 +1,12 @@
 /****************************************
    Project Specific General Styles 
 ****************************************/
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0;
+}
+.icon {
+  color: white;
+}
 
 /**************************************/
 /***************HEADER*****************/
@@ -31,6 +37,10 @@
      for layout use  button-right
      , button-lect, and back-button
    */
+   /* Header left button uses .button.button-clear */
+  .button.button-clear {
+    max-height: 30vw;
+  }
   .bar.bar-header .icon {
     display: block;
     padding: 0;
@@ -43,40 +53,42 @@
   }
   /* General icon font-image size */
   .bar.bar-header .icon:before{
-    font-size: 6vw;
+    padding: 0;
+    font-size: 6vw !important;
     /*@header*/
+    width: 15.5vw;
+    height: 15.5vw;
     line-height: 15.5vw !important;
     vertical-align: middle !important;
   }
   .bar.bar-header .icon:after{
-    height: 0;
+    height: 0 !important;
   }
 
-  /* RIGHT BUTTON*/
-  /*right button position top and bottom should be with height of icon*/
-  .buttons.buttons-right {
-    top:0 !important; right:0 !important; bottom:0 !important;
+  /**************************/
+  /****** RIGHT BUTTON ******/
+  .bar.bar-header .buttons.buttons-right {
+    width: 15.5vw;
+    height: 15.5vw;
+    top:0 !important; right:1vw !important; bottom:0 !important;
   }
-  .buttons.buttons-right .icon {
-    /* right icon container style*/
+  .bar.bar-header .buttons.buttons-right *{
+    width: 15.5vw;
   }
-  .buttons.buttons-right .icon:before {
-    /* right icon style*/
+  .bar .title + .buttons {
+    top: 0px !important;
   }
-  /* LEFT BUTTON*/
-  /*left button position top and bottom should be with height of icon*/
-  /* Left button unverified.*/
-  .buttons.buttons-left {
-    /*top:0 !important; right:0 !important; bottom:0 !important;*/
+  /**************************/
+  /****** LEFT BUTTON ******/
+  .bar.bar-header .buttons.buttons-left {
+    margin-left: 1vw;
+    width: 15.5vw;
   }
-  .buttons.buttons-left .icon {
-    /* right icon container style*/
+  .bar.bar-header .buttons.buttons-left * {
+    width: 15.5vw;
   }
-  .buttons.buttons-left .icon:before {
-    /* right icon style*/
-  }
-
-  /* BACK BUTTON */
+  /**************************/
+  /****** BACK BUTTON ******/
   .bar.bar-header .back-button{
     border:0;
     margin: 0;
@@ -84,21 +96,10 @@
     margin-left: 1vw;
     width: 15.5vw;
     height: 15.5vw;
-    padding-bottom: 15.5vw; 
   }
-  .bar.bar-header .back-button .icon {
-    /*back icon container style*/
+  .bar.bar-header .back-button * {
+    width: 15.5vw;
   }
-
-  .bar.bar-header .back-button .icon:before {
-    /*back icon style*/
-  }
-
-  .bar.bar-header .back-button:after {
-    height: 0 !important;
-  }
-
-
   /****** Unnecessary Header elements ******/
   .bar .buttons-right span {
     margin-left: 0;
@@ -113,40 +114,43 @@
 /****************  SUB HEADER ***************/
 /********************************************/
 .bar.bar-subheader {
-  background: #434252;
   /* Top should be the height of header bar */
   top: 15.5vw;
   height: 10.56vw;
   padding: 0;
   margin: 0;
+  /* app specific */
+  background: #434252;
 }
-
-
 .bar.bar-subheader h2 {
-  font-size: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  font-size: 4.45vw;
+  line-height: 10.56vw;
   text-align: center;
-  padding-top: 10px;
-  color: #73cfda;
-  font-weight: normal;
 }
-
-
-/*ion-content*/
-ion-content.has-header {
-  top: 15.5vw;
-}
-
-ion-content.has-subheader {
-  top: 31vw;
-}
-/* backgrounds */
-.bg-list {
+/********************************************/
+/****************  ION-VIEW ***************/
+/********************************************/
+#fitMate-list {
   background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
   background-size: cover;
 }
+#fitMate-write {
+  background: url('../img/06_board/fitmate/1080x1920/bg_write_page.png') no-repeat;
+  background-size: cover;
+}
+/********************************************/
+/****************  ION-CONTENT ***************/
+/********************************************/
+ion-content.has-header {
+  top: 15.5vw;
+}
+ion-content.has-subheader {
+  top: 26.06vw;
+}
 
-/* list style */
-
+/************ General list style ***********/
 .list li {
   height: 18.7vw;
   padding: 3vw 0 3vw;
@@ -155,34 +159,21 @@ ion-content.has-subheader {
 }
 .list h3 {
   font-size: 5vw;
+  margin-bottom: 1vw;
 }
 .list span {
   color: #2e4b96;
+  font-size: 3.5vw;
+  display: inline;
 }
 
-textarea {
-  border-radius: 5px 5px 5px 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-input {
-  border-radius: 5px 5px 5px 5px;
-  padding-left: 10px;
-}
-
-
-
-
-/* TODO: may not need this */
+/* May need to redo */
 .float-left {
   float: left;
 }
-
 .button {
   color: white;
 }
-
-
 .pink-title {
   background: #f14182;
   height: 60%;
@@ -194,7 +185,6 @@ input {
   position: relative;
   padding-top: 5px;
 }
-
 .pink-title ~ p {
   background: white;
   height: 40%;
@@ -203,11 +193,9 @@ input {
   color: #434252;
   border-radius: 0 0 5px 5px;
 }
-
 .pa {
   position: absolute;
 }
-
 .width-95 {
   width: 95%;
 }
@@ -337,40 +325,33 @@ input {
   top: 25%;
 }
 
-.icon {
-  color: white;
-}
-
-/* tab animation style */
-.location-ul {
-  width: 400%;
+/*************************************************/
+/*************** fitMate ABSTRACT STATE***********/
+#fitMate .location-ul {
+  width: 400vw;
   background: #434252;
-  height: 44px;
 }
-.location-li {
+#fitMate .location-li {
   display: inline-block;
-  width: 4%;
+  width: 16vw;
   text-align: center;
-  padding-top: 2px;
 }
-
-.active {
+#fitMate .location-li h2 {
+  color: #73cfda;
+  font-weight: normal;
+  line-height: 9.82vw;
+  height: 9.82vw;
+}
+#fitMate .active {
   background: white;
-  border-bottom: 6px solid #027c9f;
+  border-bottom: 1.1vw solid #098295;
+}
+#fitMate .active h2{
+  color: #1d8fb3;
 }
 
-.post-li {
-  border-bottom: 3px solid #73cfda;
-}
-
-.bg-sub1 {
-  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
-  background-size: cover;
-}
-.bg-sub2 {
-  background: url('../img/06_board/fitmate/1080x1920/bg_write_page.png') no-repeat;
-  background-size: cover;
-}
+/*************************************************/
+/*************** fitMate-list STATE***************/
 /* Writing Style */
 
 .bg-sub2 .col-90{
