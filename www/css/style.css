@@ -407,77 +407,72 @@ ion-content.has-subheader {
   color: #80f2d5;
 }
 
-/*.main-content {
-  height: 77.2vw;
-}
-*/
 .main-content a {
   display: block;
   height: 17.5vw;
 }
 
-.main-content .consult-list {
-}
 .pink-title {
   background: #f14182;
-  height: 60%;
+  height: 11.2vw;
+  line-height: 11.2vw;
   color: white;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 5.4vw;
   text-align: center;
-  border-radius: 5px 5px 0 0;
+  border-radius: 3px 3px 0 0;
   position: relative;
-  padding-top: 5px;
 }
 .pink-title ~ p {
   background: white;
-  height: 40%;
-  font-size: 15px;
+  height: 6.5vw;
+  line-height: 6.5vw;
+  font-size: 4vw;
   text-align: center;
   color: #434252;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 3px 3px;
 }
 
-.main-dumbell{
-  background: url(../img/03_main_page/1080x1920/icon_menu_findgym.png) no-repeat;
-  background-size: contain;
-  width: 10%;
-  height: 50%;
-  left: 23%;
-  top: 28%;
+#main .main-dumbell{
+  content: url(../img/03_main_page/1080x1920/icon_menu_findgym.png);
+  width: 7.5vw;
+  top: 4vw;
+  left: 23vw;
 }
-.main-location {
-  background: url(../img/03_main_page/1080x1920/icon_menu_fitmate.png) no-repeat;
-  background-size: contain;
-  width: 15%;
-  height: 50%;
-  left: 12%;
-  top: 25%;
+#main .main-location {
+  content: url(../img/03_main_page/1080x1920/icon_menu_fitmate.png);
+  width: 5.4vw;
+  top: 2.5vw;
+  left: 5vw;
 }
-.main-info {
-  background: url(../img/03_main_page/1080x1920/icon_menu_info.png) no-repeat;
-  background-size: contain;
-  width: 15%;
-  height: 50%;
-  left: 15%;
-  top: 25%;
+#main .main-info {
+  content: url(../img/03_main_page/1080x1920/icon_menu_info.png);
+  width: 5.4vw;
+  top: 2.7vw;
+  left: 6vw;
 }
-.main-qa {
-  background: url(../img/03_main_page/1080x1920/icon_menu_qna.png) no-repeat;
-  background-size: contain;
-  width: 15%;
-  height: 50%;
-  left: 15%;
-  top: 25%;
+#main .main-qa {
+  content: url(../img/03_main_page/1080x1920/icon_menu_qna.png);
+  width: 5.4vw;
+  top: 2.7vw;
+  left: 5vw;
 }
-.main-event {
-  background: url(../img/03_main_page/1080x1920/icon_menu_event.png) no-repeat;
-  background-size: contain;
-  width: 15%;
-  height: 50%;
-  left: 17%;
-  top: 25%;
+#main .main-event {
+  content: url(../img/03_main_page/1080x1920/icon_menu_event.png);
+  width: 6vw;
+  top: 2.7vw;
+  left: 6vw;
 }
+#main .main-content .row:first-child{
+  margin-top: 4vw;
+}
+#main .main-content .row:nth-of-type(2){
+  margin-top: 9vw;
+}
+#main .main-content .row:nth-of-type(3){
+  margin-top: 4.6vw;
+}
+
 
 /*************************************************/
 /*************** fitMate ABSTRACT STATE***********/
@@ -504,6 +499,30 @@ ion-content.has-subheader {
   color: #1d8fb3;
 }
 
+/*************************************************/
+/*************** fitInfo ABSTRACT STATE***********/
+#fitInfo .location-ul {
+  width: 400vw;
+  background: #434252;
+}
+#fitInfo .location-li {
+  display: inline-block;
+  width: 16vw;
+  text-align: center;
+}
+#fitInfo .location-li h2 {
+  color: #73cfda;
+  font-weight: normal;
+  line-height: 9.82vw;
+  height: 9.82vw;
+}
+#fitInfo .active {
+  background: white;
+  border-bottom: 1.2vw solid #098295;
+}
+#fitInfo .active h2{
+  color: #1d8fb3;
+}
 
 
 
