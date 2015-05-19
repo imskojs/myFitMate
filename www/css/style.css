@@ -204,6 +204,10 @@ h1, h2, h3, h4, h5, h6, p {
   background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
   background-size: cover;
 }
+#club-write {
+  background: url('../img/06_board/fitmate/1080x1920/bg_write_page.png') no-repeat;
+  background-size: cover;
+}
 /********************************************/
 /****************  ION-CONTENT ***************/
 /********************************************/
@@ -601,4 +605,137 @@ ion-content.has-subheader {
 
 
 /*************************************************/
-/***************  event ABSTRACT STATE***********/
+/***************  findFit ABSTRACT STATE***********/
+#findFit .search {
+  height: 10.56vw;
+  position: relative;
+}
+#findFit .search-icon {
+  content: url('../img/04_map/1080x1920/icon_serch_map.png') no-repeat;
+  width: 4.7vw;
+  top: 2vw;
+  left:0;
+}
+#findFit .sub-header-search {
+  padding: 0;
+  top: 1.7vw;
+  right: 0;
+  width: 53vw;
+  height: 6.5vw;
+  line-height: 6.5vw;
+  border-radius: 3px;
+  border: 1px solid #d5d6db;
+  background: #b3b2b7;
+  font-size: 3.9vw;
+  text-align: center;
+  border-radius: 3px;
+}
+#findFit .sub-header-search::-moz-placeholder { 
+   color: black;  
+   font-weight: bold;
+}
+#findFit .sub-header-search::-webkit-input-placeholder {
+   color: black;
+   font-weight: bold;
+}
+#findFit input:focus::-webkit-input-placeholder { color:transparent; }
+#findFit input:focus::-moz-placeholder { color:transparent; }
+
+/*************************************************/
+/***************  club.details STATE ***********/
+#club-details .box {
+  height: 67.5vw;
+  background: grey;
+}
+#club-details .active .icon.ion-record {
+  color: #e84982;
+}
+#club-details h2 {
+  font-size: 5.5vw;
+  margin: 4vw 0;
+}
+#club-details h3,
+#club-details option {
+  font-size: 3.6vw;
+}
+#club-details h4 {
+  font-size: 3.6vw;
+  color: #0087a1;
+}
+#club-details .border-bottom {
+  border-bottom: 2px solid #b7c0bd;
+  padding-bottom: 4vw;
+}
+#club-details .contact {
+  border: 2px solid #b7c0bd;
+  border-radius: 3px;
+  margin-bottom: 4vw;
+}
+#club-details .contact .right {
+  border-left: 2px solid #b7c0bd;
+}
+#club-details .contact h3 {
+  height: 10.5vw;
+  line-height: 10.5vw;
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+}
+#club-details .contact .phone {
+  content: url('../img/05_detail_page/1080x1920/icon_call.png');
+  width: 5vw;
+  top: 3vw;
+  left: 9vw;
+}
+#club-details .contact .note {
+  content: url('../img/05_detail_page/1080x1920/icon_callme.png');
+  width: 4.5vw;
+  top: 2.3vw;
+  left: 9vw;
+}
+
+#club-details .main-category h4 {
+  height: 7vw;
+  line-height: 7vw;
+}
+
+#club-details .main-category select {
+  width: 100%;
+  border: 2px solid black;
+  height: 7vw;
+  margin-top: 1.1vw;
+  font-size: 3.6vw;
+  text-align: center;
+}
+#club-details p {
+  margin-top: 3.2vw;
+  font-size: 3.6vw;
+  line-height: 120%;
+}
+#club .bar.bar-subheader h2{
+  color: #73cfda;
+}
+
+#club .form {
+  padding-top: 7vw;
+}
+#club .form h3 {
+  font-size: 4.1vw;
+  margin-bottom: 2vw;
+  margin-left: 1vw;
+  color: #f14182;
+  font-weight: bold;
+}
+.form input {
+  margin-bottom: 5vw;
+  height: 9vw;
+  padding: 1vw;
+  font-size: 3.8vw;
+}
+.form textarea {
+  height: 64vw;
+  padding: 2vw;
+}
+.buttons-container .col {
+  padding-top: 9vw;
+}

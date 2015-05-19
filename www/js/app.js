@@ -20,12 +20,17 @@ angular.module('myFitMate', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider){
   $stateProvider
-  .state('login', {
-    url: "/login"
+  //////////////////////////////////////
+  //////////////// 0 INIT //////////////
+  //////////////////////////////////////
+  .state('init', {
+    abstract: true,
+    url: '/init',
+    templateUrl: "states/init.html",
   })
 
-  .state('favorite', {
-    url: "/favorite"
+  .state('init.login', {
+    url: '/login'
   })
 
   .state('main', {
@@ -35,25 +40,39 @@ angular.module('myFitMate', ['ionic'])
   })
 
   //////////////////////////////////////
-  /////////////// 0 MAP /////////////
+  /////////////// 1 MAP /////////////
   //////////////////////////////////////
   .state('findFit', {
     abstract: true,
-    url: '/findFit'
+    url: '/findFit',
+    templateUrl: "states/findFit/findFit.html"
   })
   .state('findFit.map', {
-    url: "/map" //modal()
-  })
-  .state('findFit.info', {
-    url: "/info/:locationId",
-  })
-
-  .state('findFit.receive', {
-    url: "/receive/:locationId"
+    url: "/map", //modal()
+    templateUrl: "states/findFit/findFit-map.html"
   })
 
   //////////////////////////////////////
-  /////////////// 1 FIT MATE /////////////
+  /////////////// 2 CLUB /////////////
+  //////////////////////////////////////
+
+  .state('club', {
+    abstract: true,
+    url: '/club',
+    templateUrl: "states/club/club.html"
+  })
+  .state('club.details', {
+    url: '/details/:clubId',
+    templateUrl: "states/club/club-details.html"
+  })
+  .state('club.write', {
+    url: '/write/:clubId',
+    templateUrl: "states/club/club-write.html"
+  })
+
+
+  //////////////////////////////////////
+  /////////////// 3 FIT MATE /////////////
   //////////////////////////////////////
   .state('fitMate', {
     abstract: true,
@@ -77,11 +96,11 @@ angular.module('myFitMate', ['ionic'])
     templateUrl: "states/fitMate/fitMate-details.html"
   })
   //////////////////////////////////////
-  ///////////// 2 FIT INFO /////////////
+  ///////////// 4 FIT INFO /////////////
   ////////////////////////////////////// 
   .state('fitInfo', {
     abstract: true,
-    url: '/fintInfo',
+    url: '/fitInfo',
     templateUrl: "states/fitInfo/fitInfo.html",
   })
   .state('fitInfo.list', {
@@ -89,7 +108,7 @@ angular.module('myFitMate', ['ionic'])
     templateUrl: "states/fitInfo/fitInfo-list.html"
   })
   .state('fitInfo.write', {
-    url: "/info/:infoPostId",
+    url: "/write/:infoPostId",
     templateUrl: "states/fitInfo/fitInfo-write.html"
   })
 
@@ -99,7 +118,7 @@ angular.module('myFitMate', ['ionic'])
   })
 
   //////////////////////////////////////
-  /////////////// 3 Consult  ///////////
+  /////////////// 5 Consult  ///////////
   //////////////////////////////////////
   .state('consult', {
     abstract: true,
@@ -121,7 +140,7 @@ angular.module('myFitMate', ['ionic'])
     templateUrl: "states/consult/consult-details.html"
   })
   //////////////////////////////////////
-  //////////////  4 Event  /////////////
+  //////////////  6 Event  /////////////
   //////////////////////////////////////
   .state('event', {
     abstract: true,
