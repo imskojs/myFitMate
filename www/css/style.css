@@ -225,38 +225,6 @@ ion-content.has-subheader {
 /************** General list content style ***************/
 
 
-/* May need to redo */
-.float-left {
-  float: left;
-}
-.button {
-  color: white;
-}
-.pink-title {
-  background: #f14182;
-  height: 60%;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 5px 5px 0 0;
-  position: relative;
-  padding-top: 5px;
-}
-.pink-title ~ p {
-  background: white;
-  height: 40%;
-  font-size: 15px;
-  text-align: center;
-  color: #434252;
-  border-radius: 0 0 5px 5px;
-}
-.pa {
-  position: absolute;
-}
-.width-95 {
-  width: 95%;
-}
 
 
 
@@ -414,74 +382,60 @@ ion-content.has-subheader {
   background-size: cover;
 }
 
-.main-top-bg {
+#main ion-pane.main-top-bg {
   background: url(../img/03_main_page/1080x1920/bg_main_image.png) no-repeat;
   background-size: cover;
   width: 100%;
-  height: 50%;
+  height: 90.3vw;
 }
-
-.main-top-bg .main-header {
-  /*background: none;*/
+#main ion-content {
+  top: 90.3vw;
 }
-
-.main-top-bg .main-header .ko-burger {
-  background: url(../img/03_main_page/1080x1920/icon_side_menu.png) no-repeat;
-  background-size: contain;
-  width: 26px;
-  height: 26px;
-  margin-top: 3px;
-  margin-left: 15px;
-}
-.main-top-bg .main-header h1 {
-  color: white;
-  font-size: 10px;
-}
-
-.main-top-bg .main-header .ko-share {
-  background: url(../img/03_main_page/1080x1920/icon_share.png) no-repeat;
-  background-size: contain;
-  width: 26px;
-  height: 26px;
-  margin-top: 3px;
-  margin-right: 15px;
-}
-
-.main-mid-bar {
+#main .main-mid-bar {
+  height: 10.5vw;
   background: url(../img/03_main_page/1080x1920/bar_under_image.png);
   background-size: cover;
-  width: 100%;
-  height: 5%;
 }
-
-.main-mid-bar p {
+#main .main-mid-bar p {
+  font-size: 2.7vw;
+  line-height: 10.5vw;
   color: white;
   text-align: center;
-  padding-top: 5px;
+  letter-spacing: 1px;
 }
-
-.main-mid-bar span {
+#main .main-mid-bar span {
   color: #80f2d5;
 }
 
-.main-content {
-  height: 45%;
-  width: 100%;
+/*.main-content {
+  height: 77.2vw;
 }
-
+*/
 .main-content a {
   display: block;
-  float: left;
-  height:20%;
-  width: 42.5%;
-  margin-left: 5%;
-  margin-top: 5%;
+  height: 17.5vw;
 }
 
-.main-content .main-map-a {
-  width: 90%;
-  margin-left: 5%;
-  margin-bottom: 5%;
+.main-content .consult-list {
+}
+.pink-title {
+  background: #f14182;
+  height: 60%;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  padding-top: 5px;
+}
+.pink-title ~ p {
+  background: white;
+  height: 40%;
+  font-size: 15px;
+  text-align: center;
+  color: #434252;
+  border-radius: 0 0 5px 5px;
 }
 
 .main-dumbell{

@@ -12,54 +12,76 @@
   </ion-nav-buttons>
 
   <!-- Non-scrollable content main-container has bg-->
-  <ion-content class="main-container">
+  <ion-pane class="main-top-bg">
+  </ion-pane>
+
+  <ion-content>
     <!-- Top bg -->
-    <div class="main-top-bg bg">
+    <div class="main-mid-bar">
+      <p>함께하는 운동은 즐겁다, 찾아줘 <span> &nbsp;MYFITMATE</span></p>
     </div>
-    <div class="main-mid-bar bg">
-      <p>함께하는 운동은 즐겁다, 찾아줘 <span>MYFITMATE</span></p>
-    </div>
-      <div class="main-content">
+      <div class="main-content row">
         
-        <a href="map.html" class="main-map-a">
-            <div class="pink-title">
-              <i class="main-dumbell pa"></i>
-              <p>헬스장 찾기</p>
+        <div class="col"></div>
+        <div class="col col-90">
+          <div class="row">
+            <div class="col">
+              <a ui-sref="consult.list" class="consult-list">
+                  <div class="pink-title">
+                    <i class="main-dumbell pa"></i>
+                    <p>헬스장 찾기</p>
+                  </div>
+                  <p class="pink-content">지도에서 헬스장 찾기</p>
+              </a> 
             </div>
-            <p class="pink-content">지도에서 헬스장 찾기</p>
-        </a> 
-        
-        <a ui-sref="fitMate.list">
-            <div class="pink-title">
-              <i class="main-location pa"></i>
-              <p> &nbsp;&nbsp;&nbsp;FIT MATE</p>
+          </div>
+         
+          <div class="row">
+            <div class="col">
+              <a ui-sref="fitMate.list">
+                  <div class="pink-title">
+                    <i class="main-location pa"></i>
+                    <p> &nbsp;&nbsp;&nbsp;FIT MATE</p>
+                  </div>
+                  <p class="pink-content">MY FIT MATE  찾기</p>
+              </a>
             </div>
-            <p class="pink-content">MY FIT MATE  찾기</p>
-        </a>
-        
-        <a href="fit_info.html">
-            <div class="pink-title">
-              <i class="main-info pa"></i>
-              <p>&nbsp;&nbsp;&nbsp;운동 정보</p>
+            <div class="col col-5"></div>
+            <div class="col">
+              <a ui-sref="fitInfo.list">
+                  <div class="pink-title">
+                    <i class="main-info pa"></i>
+                    <p>&nbsp;&nbsp;&nbsp;운동 정보</p>
+                  </div>
+                  <p class="pink-content">운동 분야별 정보, TIP</p>
+              </a>
             </div>
-            <p class="pink-content">운동 분야별 정보, TIP</p>
-        </a>
-        
-        <a ui-sref="consult.list">
-            <div class="pink-title">
-              <i class="main-qa pa"></i>
-              <p>&nbsp;&nbsp;&nbsp;상담 하기</p>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <a ui-sref="consult.list">
+                  <div class="pink-title">
+                    <i class="main-qa pa"></i>
+                    <p>&nbsp;&nbsp;&nbsp;상담 하기</p>
+                  </div>
+                  <p class="pink-content">트레이너와 상담 하기</p>
+              </a>
             </div>
-            <p class="pink-content">트레이너와 상담 하기</p>
-        </a>
-        
-        <a href="event_menu.html">
-            <div class="pink-title">
-              <i class="main-event pa"></i>
-              <p>&nbsp;&nbsp;&nbsp;이벤트</p>
+            <div class="col col-5"></div>
+            <div class="col">
+              <a href="event_menu.html">
+                  <div class="pink-title">
+                    <i class="main-event pa"></i>
+                    <p>&nbsp;&nbsp;&nbsp;이벤트</p>
+                  </div>
+                  <p class="pink-content">자체 / 제휴업체 EVENT</p>
+              </a>
             </div>
-            <p class="pink-content">자체 / 제휴업체 EVENT</p>
-        </a>
+          </div>
+          
+        </div>
+        <div class="col"></div>
         
       </div>
   </ion-content>
