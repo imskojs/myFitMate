@@ -7,6 +7,24 @@ h1, h2, h3, h4, h5, h6, p {
 .icon {
   color: white;
 }
+.button.button-positive {
+  padding:0;
+  min-width:0;
+  min-height:0;
+  width: 100%;
+  height: 12.22vw;
+  border: 0;
+  border-radius: 3px;
+  vertical-align: middle;
+  border-color: #f14182;
+  background: #f14182;
+  font-size: 5.4vw;
+  letter-spacing: -1px;
+}
+
+.button:after {
+  position: static;
+}
 
 /**************************************/
 /***************HEADER*****************/
@@ -143,6 +161,10 @@ h1, h2, h3, h4, h5, h6, p {
   background: url('../img/06_board/fitmate/1080x1920/bg_write_page.png') no-repeat;
   background-size: cover;
 }
+#fitmate-details {
+  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
+  background-size: cover;
+}
 /********************************************/
 /****************  ION-CONTENT ***************/
 /********************************************/
@@ -162,13 +184,46 @@ ion-content.has-subheader {
 }
 .list h3 {
   font-size: 5vw;
-  margin-bottom: 1vw;
+  margin-bottom: 2vw;
 }
 .list span {
   color: #2e4b96;
   font-size: 3.5vw;
   display: inline;
 }
+
+/************* General form style************/
+.form {
+  padding-top: 11vw;
+}
+.form * {
+  width: 100%;
+  border-radius: 3px;
+  font-size: 3.8vw;
+}
+.form h3 {
+  font-size: 4.1vw;
+  margin-bottom: 4vw;
+  margin-left: 1vw;
+  color: #f14182;
+  font-weight: bold;
+}
+.form input {
+  margin-bottom: 10vw;
+  height: 10vw;
+  padding: 1vw;
+  font-size: 3.8vw;
+}
+.form textarea {
+  height: 64vw;
+  padding: 2vw;
+}
+.buttons-container .col {
+  padding-top: 9vw;
+}
+
+/************** General list content style ***************/
+
 
 /* May need to redo */
 .float-left {
@@ -205,27 +260,169 @@ ion-content.has-subheader {
 
 
 
+/******************* General details list style ********************/
+
+.detail-title {
+  border-bottom: 1px solid #2e4b96;
+  padding: 3.2vw 0;
+}
+
+.detail-title h2{
+  font-size: 4.6vw;
+  margin-bottom: 2vw;
+}
+.detail-title p{
+  margin-bottom: 0;
+  font-size: 3.88vw;
+}
+.detail-title span {
+  color: #2e4b96;
+}
+.detail-content-wrapper {
+  background: rgba(255, 236, 242, .6);
+}
+.detail-left {
+  border-right: 1px solid #2e4b96;
+}
+.detail-content {
+  padding: 5.8vw 0 5vw;
+}
+.detail-content h3{
+  font-size: 3.7vw;
+  margin-bottom: 1.7vw;
+}
+.detail-content h3 span.small{
+  font-size: 2.0vw;
+  color: #2e4b96;
+}
+.detail-content p{
+  font-size: 3.2vw;
+  line-height: 120%;
+  margin-bottom: 0;
+}
+.detail-content-bottom {
+  font-size: 3.4vw;
+  margin-bottom: 0.1vw;
+}
+.detail-content-bottom .bottom-content > * {
+  display: inline-block;
+  height: 5vw;
+  line-height: 5vw;
+  width: 22vw;
+  vertical-align: top;
+}
+.detail-content-bottom .arrow {
+  background: url('../img/06_board/fitmate/1080x1920/btn_comment_up.png') no-repeat;
+  background-size: contain;
+  width: 3.5vw;
+  margin-top: 1.5vw;
+  margin-right: 1%;
+}
+.detail-content-wrapper .poster-image {
+  top: 5%; left: 0.5%;
+  width: 13vw;
+  border-radius: 50% 50%;
+  border: 1px solid black;
+}
+
+.detail-content-wrapper .manage-post {
+  right:5%; top:8%;
+  background: url('../img/06_board/fitmate/1080x1920/btn_manage_text.png') no-repeat;
+  background-size: contain;
+  width: 15.7vw;
+  height: 7.12vw;
+}
+.detail-content-wrapper .manage-choice {
+  right:5%; top:25%;
+  background: url('../img/06_board/fitmate/1080x1920/menu_box_manage_text.png') no-repeat;
+  background-size: cover;
+  width: 25.6481vw;
+  height: 7.6852vw;
+}
+.detail-content-wrapper .manage-choice > div{
+  height: 78%;
+  width: 100%;
+  position: relative;
+  top: 21%;
+  display: table;
+}
+.detail-content-wrapper .manage-choice > div > div{
+  font-size: 2.778vw;
+  width: 50%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.detail-comment-container {
+  background: rgba(0, 0, 0, .4);
+  border-bottom: 0.4vw solid #2e4b96;
+}
+.detail-comment-container .detail-comments {
+  margin-top: 1.9vw;
+}
+.detail-comment-container .detail-comments .input-container .input textarea{
+  width: 100%;
+  max-width: 100%;
+  border: 0.4vw solid #434252;
+  height: 11.4vw;
+  padding: 1vw;
+}
+  .input-container .comment-button button.button-positive{
+    background: #434252;
+    font-size: 2.5vw;
+    height: 7vw;
+    line-height: 7vw;
+    margin-top: 4.4vw;
+    font-weight: bold;
+  }
+
+.detail-comment-container .detail-comments .comments-list li {
+  padding: 2vw 4%;
+  border-bottom: 0.3vw solid #777 ;
+  position: relative;
+}
+
+.detail-comment-container .detail-comments .comments-list li:last-child {
+  border-bottom: none;
+}
+.detail-comment-container .detail-comments .comments-list li h3{
+  font-size: 3.5vw;
+  margin-bottom: 2vw;
+}
+.detail-comment-container .detail-comments .comments-list li h3 span{
+  font-size: 2vw;
+  font-weight: normal;
+}
+.detail-comment-container .detail-comments .comments-list li p{
+  font-size: 3vw;
+  line-height: 110%;
+}
+.detail-comment-container .detail-comments .comments-list li .x{
+  position: absolute;
+  top: 8%; right: 4%;
+  background: url('../img/06_board/fitmate/1080x1920/btn_del_comment.png') no-repeat;
+  background: contain;
+  background-position: center;
+  width: 3.6vw;
+  height: 3.6vw;
+}
 /********************************************
                   main.html
 *********************************************/
-.main-container {
-  background: url(../img/03_main_page/1080x1920/screen_background.png);
+#main {
+  background: url(../img/03_main_page/1080x1920/screen_background.png) no-repeat;
   background-size: cover;
-  width: 100%;
-  /*TODO: height*/
-  height: 100%;
 }
 
 .main-top-bg {
   background: url(../img/03_main_page/1080x1920/bg_main_image.png) no-repeat;
   background-size: cover;
   width: 100%;
-  /*TODO: responsive image*/
   height: 50%;
 }
 
 .main-top-bg .main-header {
-  background: none;
+  /*background: none;*/
 }
 
 .main-top-bg .main-header .ko-burger {
@@ -353,169 +550,6 @@ ion-content.has-subheader {
   color: #1d8fb3;
 }
 
-/*************************************************/
-/*************** fitMate-list STATE***************/
-/* Writing Style */
 
-.bg-sub2 .col-90{
-  margin-top: 120px;
-  height: 70%;
-}
-
-.bg-sub2 form {
-  height: 100%;
-}
-.bg-sub2 p {
-  color: #f14182;
-  font-weight: bold;
-}
-
-.bg-sub2 p:nth-of-type(2){
-  margin-top: 24px;
-}
-
-.bg-sub2 textarea {
-  width: 100%;
-  height: 50%;
-}
-.bg-sub2 input {
-  width: 100%;
-}
-
-.bg-sub2 button.button-clear {
-  background: #f14182;
-  width: 100%;
-  border: none;
-  color: white;
-  font-weight: bold;
-  margin-top: 20px;
-  min-height: 40px;
-  height: 40px;
-}
-
-
-/* Background bg-fitmate details */
-.bg-fitmate-sub3 {
-  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
-  background-size: cover;
-}
-
-.f3 .detail-title {
-  border-bottom: 1px solid #2e4b96;
-  padding: 10px 5%;
-}
-
-.f3 .detail-title h2{
-  font-size: 1.1rem;
-}
-.f3 .detail-title p{
-  margin-bottom: 0;
-}
-.f3 .detail-title span {
-  color: #2e4b96;
-}
-.f3 .detail-content {
-  background: rgba(255, 236, 242, .6);
-  margin-top: 1px;
-}
-.f3 .border-left {
-  border-left: 1px solid #2e4b96;
-}
-
-.f3 .border-left .padding {
-  padding: 10px;
-  padding-left: 10%;
-}
-.f3 .border-left .padding h3{
-  font-size: 1rem;
-}
-.f3 .border-left .padding .small {
-  font-size: .6rem;
-}
-.f3 .border-left .padding p {
-  font-size: .7rem;
-  line-height: 150%;
-}
-
-.f3 .border-left .padding .poster-image {
-  left:-8%; top:5px;
-  border-radius: 50% 50%;
-}
-.f3 .border-left .padding .poster-image img{
-  border-radius: 50% 50%;
-  width: 25%;
-  height: auto;
-}
-.f3 .border-left .padding .manage-post {
-  right:5%; top:5%;
-  background: url('../img/06_board/fitmate/1080x1920/btn_manage_text.png') no-repeat;
-  background-size: contain;
-  width: 20%;
-  height: 35%;
-}
-.f3 .border-left .padding .post-comment {
-  left: 2%; bottom: -8px;
-  vertical-align: middle;
-}
-
-.f3 .border-left .padding .drop-arrow {
-  background: url('../img/06_board/fitmate/1080x1920/btn_comment_up.png') no-repeat;
-  background-size: cover;
-  display: inline-block;
-  width: 10px;
-  height: 5px;
-}
-
-.f3 .comment-expanded {
-  background: rgba(0, 0, 0, .4);
-  margin-top: 1px;
-
-}
-.f3 .comment-expanded .comment-input {
-  margin: 10px 10px 10px 10px;
-}
-
-.f3 .comment-expanded .comment-input textarea {
-  width: 100%;
-  border: 1px solid black;
-}
-
-.f3 .comment-expanded .comment-input .comment-button {
-  height: 22px;
-  padding-left: 1%;
-  border-radius: 10px;
-}
-.f3 .comment-expanded .comment-input .comment-button button {
-  background: url('../img/06_board/fitmate/1080x1920/btn_comment.png') no-repeat;
-  background-size: contain;
-  width: 40px;
-  height: 20px;
-}
-
-.f3 .comment-expanded .comment-list {
-  border-bottom: 1px solid #2e4b96;
-}
-
-.f3 .comment-expanded .comment-list li{
-  padding: 5px 3% 5px 5%;
-  border-bottom: 1px solid #d8d7dc;
-}
-.f3 .comment-expanded .comment-list li:last-child{
-  border-bottom: none;
-}
-
-.f3 .comment-expanded .comment-list li h3{
-  font-size: .8rem;
-}
-.f3 .comment-expanded .comment-list li h3 span{
-  font-size: .5rem;
-  font-weight: normal;
-  margin-left: 2%;
-}
-
-.f3 .comment-expanded .comment-list li p{
-  font-size: .8rem;
-  line-height: 120%;
-}
 
 

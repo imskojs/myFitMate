@@ -1,29 +1,31 @@
 <ion-view view-title="FITMATE" id="fitMate-write">
 
-  <ion-content class="bg bg-sub2 row" ng-controller="FitMateFormController" padding=false>
-      <div class="col"></div>
+  <ion-content ng-controller="FitMateFormController">
 
-      <div class="col col-90">
-        <form novalidate>
-          <p class="form-label">제목</p>
-          <input type="text" ng-model="fitMateForm.title" placeholder="  제목을 입력해 주세요">
-          <p class="form-label">내용</p>
-          <textarea placeholder="내용을 입력해 주세요" ng-model="fitMateForm.content"></textarea>
-          <div class="row">
-          <div class="col"></div>
-            <div class="col col-40">
-              <button class="button button-positive" ui-sref="fitMate.details">들록하기</button>
-            </div>
-            <div class="col"></div>
-            <div class="col col-40">
-              <button class="button button-clear">최소하기</button>
-            </div>
-            <div class="col"></div>
-          </div>
-        </form>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col col-86 form">
+        <h3>제목</h3>
+        <input type="text" placeholder="제목을 입력해주세요">
+        <h3>내용</h3>
+        <textarea placeholder="내용을 입력해주세요"></textarea>
       </div>
-
       <div class="col"></div>
+    </div>
+
+
+
+    <div class="row buttons-container">
+       <div class="col"></div> 
+       <div class="col col-30">
+          <button class="button button-positive" ui-sref="fitMate.details">등록하기</button>
+       </div>
+       <div class="col col-5"></div>
+       <div class="col col-30">
+         <button class="button button-positive">최소하기</button>
+       </div>
+       <div class="col"></div>
+    </div>
   </ion-content>
 
 </ion-view>

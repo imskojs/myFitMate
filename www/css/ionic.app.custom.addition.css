@@ -18,10 +18,6 @@ form {
   padding: 0;
 }
 
-span {
-  display: inline-block;
-}
-
 .relative {
   position: relative;
 }
@@ -45,6 +41,9 @@ span {
 .col {
   margin: 0;
   padding: 0;
+}
+.row + .row {
+  margin-top: 0;
 }
 
 .col-1 {
