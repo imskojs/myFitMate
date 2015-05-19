@@ -4,9 +4,10 @@ $scope, $ionicScrollDelegate, LocationData
 ){
 
 
+  // Data required
   var menuLength = LocationData.locations.length
   $scope.menuClickHandler = function($index, $event, target){
-    var menuPixelLength = angular.element('.location-ul').prop('offsetWidth');
+    var menuPixelLength = angular.element('.category-ul').prop('offsetWidth');
     var pixelPerItem = menuPixelLength / menuLength 
     var currentTarget = angular.element($event.currentTarget)
     var currentId = currentTarget.attr('id');

@@ -161,7 +161,46 @@ h1, h2, h3, h4, h5, h6, p {
   background: url('../img/06_board/fitmate/1080x1920/bg_write_page.png') no-repeat;
   background-size: cover;
 }
-#fitmate-details {
+#fitMate-details {
+  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
+  background-size: cover;
+}
+
+#fitInfo-list {
+  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
+  background-size: cover;
+}
+#fitInfo-write {
+  background: url('../img/06_board/fitmate/1080x1920/bg_write_page.png') no-repeat;
+  background-size: cover;
+}
+#fitInfo-details {
+  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
+  background-size: cover;
+}
+
+#consult-list {
+  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
+  background-size: cover;
+}
+#consult-write {
+  background: url('../img/06_board/fitmate/1080x1920/bg_write_page.png') no-repeat;
+  background-size: cover;
+}
+#consult-details {
+  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
+  background-size: cover;
+}
+
+#event-list {
+  background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
+  background-size: cover;
+}
+#event-write {
+  background: url('../img/06_board/fitmate/1080x1920/bg_write_page.png') no-repeat;
+  background-size: cover;
+}
+#event-details {
   background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
   background-size: cover;
 }
@@ -267,6 +306,11 @@ ion-content.has-subheader {
   font-size: 3.2vw;
   line-height: 120%;
   margin-bottom: 0;
+}
+/* admin upleaded image styling */
+.detail-content img{
+  width: 100%
+  height: auto;
 }
 .detail-content-bottom {
   font-size: 3.4vw;
@@ -476,41 +520,46 @@ ion-content.has-subheader {
 
 /*************************************************/
 /*************** fitMate ABSTRACT STATE***********/
-#fitMate .location-ul {
+#fitMate .category-ul {
+  /* long container inside ion-scroll element */
   width: 400vw;
   background: #434252;
 }
-#fitMate .location-li {
+#fitMate .category-li {
+  /* list of items inside long container */
   display: inline-block;
   width: 16vw;
   text-align: center;
 }
-#fitMate .location-li h2 {
+#fitMate .category-li h2 {
+  /* set sub-headerbar's height with inner content */
+  height: 9.82vw;
+  line-height: 9.82vw;
   color: #73cfda;
   font-weight: normal;
-  line-height: 9.82vw;
-  height: 9.82vw;
 }
 #fitMate .active {
-  background: white;
+  /* activated style, border does not change height as li has box-model: borderbox; */
   border-bottom: 1.2vw solid #098295;
+  background: white;
 }
 #fitMate .active h2{
+  /* active text styling has to be at the most inner element and not outer */
   color: #1d8fb3;
 }
 
 /*************************************************/
 /*************** fitInfo ABSTRACT STATE***********/
-#fitInfo .location-ul {
-  width: 400vw;
+#fitInfo .category-ul {
+  width: 180vw;
   background: #434252;
 }
-#fitInfo .location-li {
+#fitInfo .category-li {
   display: inline-block;
-  width: 16vw;
+  width: 28vw;
   text-align: center;
 }
-#fitInfo .location-li h2 {
+#fitInfo .category-li h2 {
   color: #73cfda;
   font-weight: normal;
   line-height: 9.82vw;
@@ -523,6 +572,33 @@ ion-content.has-subheader {
 #fitInfo .active h2{
   color: #1d8fb3;
 }
+/*************************************************/
+/***************  consult ABSTRACT STATE***********/
+#consult .bar.bar-subheader h2{
+  color: #73cfda;
+}
+/*************************************************/
+/***************  event ABSTRACT STATE***********/
+#event .bar.bar-subheader h2{
+  color: #73cfda;
+}
+/*************************************************/
+/***  event.list, event.write 3rd header in content*****/
+.event-contact-container {
+  height: 10vw;
+  background: #73cfda;
+  border-top: 1px solid #027c9f;
+  border-bottom: 1px solid #027c9f;
+}
+.event-contact {
+  background: url('../img/06_board/event/1080x1920/btn_event_mail.png') no-repeat;
+  background-size: cover;
+  height: 6vw;
+  width: 100%;
+  border-radius: 3px;
+  margin-top: 1.9vw;
+}
 
 
-
+/*************************************************/
+/***************  event ABSTRACT STATE***********/

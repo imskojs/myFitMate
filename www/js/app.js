@@ -81,17 +81,21 @@ angular.module('myFitMate', ['ionic'])
   ////////////////////////////////////// 
   .state('fitInfo', {
     abstract: true,
-    url: '/fintInfo'
+    url: '/fintInfo',
+    templateUrl: "states/fitInfo/fitInfo.html",
   })
   .state('fitInfo.list', {
-    url: "/list"
+    url: "/list",
+    templateUrl: "states/fitInfo/fitInfo-list.html"
   })
   .state('fitInfo.write', {
     url: "/info/:infoPostId",
+    templateUrl: "states/fitInfo/fitInfo-write.html"
   })
 
-  .state('fitInfo.receive', {
-    url: "/receive/:locationId",
+  .state('fitInfo.details', {
+    url: "/details/:locationId",
+    templateUrl: "states/fitInfo/fitInfo-details.html"
   })
 
   //////////////////////////////////////
@@ -113,7 +117,7 @@ angular.module('myFitMate', ['ionic'])
   })
 
   .state('consult.details', {
-    url: "/details",
+    url: "/details:consultPostId",
     templateUrl: "states/consult/consult-details.html"
   })
   //////////////////////////////////////
@@ -121,18 +125,22 @@ angular.module('myFitMate', ['ionic'])
   //////////////////////////////////////
   .state('event', {
     abstract: true,
-    url: "/event"
+    url: "/event",
+    templateUrl: "states/event/event.html"
   })
 
   .state('event.list', {
-    url: "/event"
+    url: "/list",
+    templateUrl: "states/event/event-list.html"
   })
   .state('event.write', {
-    url: "/event"
+    url: "/write",
+    templateUrl: "states/event/event-write.html"
   })
 
   .state('event.details', {
-    url: "/event"
+    url: "/event",
+    templateUrl: "states/event/event-details.html"
   });
 
   $urlRouterProvider.otherwise('/main');
