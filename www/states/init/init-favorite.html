@@ -1,0 +1,58 @@
+<ion-view id="init-favorite">
+  <ion-content>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col col-39">
+      <p></p>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col col-77">
+          <div class="logo"></div>
+        </div>
+        <div class="col"></div>
+      </div>
+
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <div class="row">
+    <div class="col"></div>
+    <div class="col col-78 content-container">
+      <div class="title relative">
+        <h2>관심 분야 설정</h2>
+        <i class="x absolute"></i>
+      </div>
+      <div class="content">
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col col-77">
+          <h3>관심 분야를 설정해 주세요.</h3>
+          <div class="select-wrapper relative">
+            <div class="select-arrow absolute"> ^ </div>
+          </div>
+          <select ng-options="option as option.type for option in options" ng-model="selectedOption" class="category relative">
+          </select>
+          <h4 class="set">설정하기</h4>
+        </div>
+        <div class="col"></div>
+      </div>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col col-91">
+          <h5>* 관심 분야 설정시, 관련 분야의 헬스장, 체육관이 등록 될때,
+          알림메세지를 받아 보실 수 있습니다.
+          </h5>
+        </div>
+        <div class="col"></div>
+      </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  </ion-content>
+</ion-view>

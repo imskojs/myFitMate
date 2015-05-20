@@ -23,10 +23,12 @@
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="states/main.js"></script>
+    <script src="states/init/init-favorite.js"></script>
     <script src="js/controllers/fitMateListController.js"></script>
     <script src="js/controllers/fitInfoListController.js"></script>
     <script src="js/controllers/categoryMenuController.js"></script>
     <script src="js/controllers/fitMateFormController.js"></script>
+    <script src="js/services/data.js"></script>
     <script src="js/services/locationData.js"></script>
     <script src="js/services/postData.js"></script>
     <script src="js/services/koStateChangeUtility.js"></script>
@@ -34,7 +36,7 @@
 <body ng-controller="MainController">
 
 <ion-side-menus>
-  <ion-side-menu-content>
+  <ion-side-menu-content drag-content="false">
     <ion-nav-bar class="bar-positive my-bar" align-title="center" ng-class="{'transparent-background': transparentBackground}">
       <ion-nav-back-button>
       </ion-nav-back-button> 

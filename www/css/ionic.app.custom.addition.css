@@ -9,6 +9,15 @@ a:-webkit-any-link{
   text-decoration:none !important;
 }
 
+/*default: absolute, top: -6px, ..., left: -6px*/
+.button:after {
+  position: static;
+}
+
+/*default: white*/
+.pane, .view {
+  background: none;
+}
 /*************************************
               Layouts 
 *************************************/
@@ -24,6 +33,16 @@ form {
 
 .absolute {
   position: absolute;
+}
+.table {
+  display: table;
+  position: relative;
+}
+.table-cell {
+  display: table-cell;
+}
+.inline-block {
+  display: inline-block;
 }
 
 .left {

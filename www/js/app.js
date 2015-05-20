@@ -26,13 +26,23 @@ angular.module('myFitMate', ['ionic'])
   .state('init', {
     abstract: true,
     url: '/init',
-    templateUrl: "states/init.html",
+    templateUrl: "states/init/init.html",
   })
 
   .state('init.login', {
-    url: '/login'
+    url: '/login',
+    templateUrl: "states/init/init-login.html"
+  })
+  .state('init.favorite', {
+    url: '/favorite',
+    templateUrl: "states/init/init-favorite.html",
+    controller: 'init.favorite'
   })
 
+
+  //////////////////////////////////////
+  //////////////// 0 MAIN //////////////
+  //////////////////////////////////////
   .state('main', {
     url: "/main",
     templateUrl: "states/main.html",
@@ -162,5 +172,5 @@ angular.module('myFitMate', ['ionic'])
     templateUrl: "states/event/event-details.html"
   });
 
-  $urlRouterProvider.otherwise('/main');
+  $urlRouterProvider.otherwise('/init/login');
 });
