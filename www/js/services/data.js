@@ -1,6 +1,7 @@
 angular.module('myFitMate')
 .factory('Data', function (){
   return {
+    
     init: {
       favorite: {
         options: [
@@ -10,8 +11,11 @@ angular.module('myFitMate')
           { id: 3, type: '요가' },
           { id: 4, type: '복싱' },
           { id: 5, type: '클라이밍' }
-        ]
+        ],
+        selectedOption: null
       } 
-    }
+    },
+
+    
   };
 });
