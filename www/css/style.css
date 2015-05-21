@@ -150,6 +150,12 @@ h1, h2, h3, h4, h5, h6, p {
 /********************************************/
 /****************  ION-VIEW ***************/
 /********************************************/
+#crescent-spinner {
+  width: 400px;
+  height: 400px;
+  stroke: #f14182;
+  fill: #f14182;
+}
 #fitMate-list {
   background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
   background-size: cover;

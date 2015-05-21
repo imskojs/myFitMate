@@ -1,14 +1,15 @@
 <ion-view view-title="FITMATE" id="fitMate-write">
 
-  <ion-content ng-controller="FitMateFormController">
+  <ion-content>
 
     <div class="row">
       <div class="col"></div>
       <div class="col col-86 form">
         <h3>제목</h3>
-        <input type="text" placeholder="제목을 입력해주세요">
+        <input type="text" placeholder="제목을 입력해주세요" ng-model="form.title">
         <h3>내용</h3>
-        <textarea placeholder="내용을 입력해주세요"></textarea>
+        <textarea placeholder="내용을 입력해주세요" ng-model="form.content">
+        </textarea>
       </div>
       <div class="col"></div>
     </div>
@@ -18,7 +19,8 @@
     <div class="row buttons-container">
        <div class="col"></div> 
        <div class="col col-30">
-          <button class="button button-positive" ui-sref="fitMate.details">등록하기</button>
+          <button class="button button-positive" ng-click="processPost(form)">
+          등록하기</button>
        </div>
        <div class="col col-5"></div>
        <div class="col col-30">
