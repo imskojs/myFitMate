@@ -1,10 +1,10 @@
-<ion-view ng-controller="CategoryMenuController" id="fitMate">
+<ion-view id="fitMate">
 
   <ion-header-bar class="bar bar-subheader">
 
     <ion-scroll direction="x" scrollbar-x=false delegate-handle="categoryMenu">
       <ul class="category-ul">
-        <li class="category-li" ng-repeat="category in categories" id="{{ $index }}" ng-click="menuClickHandler($index, $event, loc)"><h2>{{ category.location }}</h2>
+        <li class="category-li" ng-repeat="category in categories" id="{{ $index }}" ng-click="subHeaderMenuScroller(categories, 'categoryMenu', $index, $event, category, 2.8)"><h2>{{ ::category.location }}</h2>
         </li>
       </ul>
     </ion-scroll>

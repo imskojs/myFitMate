@@ -1,10 +1,9 @@
 angular.module('myFitMate')
 .controller('fitMate', function(
-  $scope, $state, $ionicScrollDelegate, Data, Utility
+  $scope, $state, Data, Utility
 ){
 
   $scope.categories = Data.fitMate.categories;
-  $scope.subHeaderMenu = Utility.subHeaderMenu;
+  $scope.subHeaderMenuScroller = Utility.subHeaderMenuScroller;
 
-  // $scope.subHeaderMenu();
 })
