@@ -15,7 +15,8 @@ a:-webkit-any-link{
 }
 
 /*default: white*/
-.pane, .view {
+ion-pane.pane {
+  background: transparent;
 }
 /*************************************
               Layouts 
