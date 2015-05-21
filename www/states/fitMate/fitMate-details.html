@@ -4,8 +4,8 @@
       <div class="row detail-title">
         <div class="col col-5"></div>
         <div class="col">
-          <h2> 강남구 역삼동 같이 요가 하실 여성 분 찾아요~ </h2>
-          <p><span>Lee Yeon Hee</span> / 2015. 01. 05 15:30 조회 638 </p>
+          <h2> {{ currentPost.title }}</h2>
+          <p><span>{{ currentPost.createdBy }}</span> / {{ currentPost.createdAt }} 조회 638 </p>
         </div>
       </div>
 
@@ -27,11 +27,8 @@
           <div class="row">
             <div class="col"></div>
             <div class="col col-84 detail-content">
-              <h3>Lee Yeon Hee <span class="small">2015.01.01 15:30</span></h3>
-              <p>강남구 역삼동에 사는 이연희 라고 합니다. 
-                역삼동 파워 퓌트니스에서 직장인 반 요가 클래스가 있는데, 수업이
-                끝나면 시간이 늦어 혼자 다니기가 고민되서요 ㅠ 
-                같은 지역 사시는 여성 분들 중 같이 요가 배워보실분 찾습니다~
+              <h3>{{ currentPost.createdBy }} <span class="small">{{ currentPost.createdAt }}</span></h3>
+              <p> {{ currentPost.content }}
               </p>
             </div>
             <div class="col"></div>
@@ -40,7 +37,7 @@
           <div class="row detail-content-bottom">
             <div class="col col-2"></div>
             <div class="col bottom-content">
-              <span class="arrow"></span> <p>댓글: <span>96</span></p> 
+              <span class="arrow"></span> <p>댓글: <span>{{currentPost.comments.length}}</span></p> 
             </div>
           </div>
 

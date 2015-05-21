@@ -156,6 +156,12 @@ h1, h2, h3, h4, h5, h6, p {
   stroke: #f14182;
   fill: #f14182;
 }
+#postError {
+  color: #f14182;
+}
+#getPostDetailsError {
+  color: #f14182;
+}
 #fitMate-list {
   background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
   background-size: cover;
@@ -259,10 +265,12 @@ ion-content.has-subheader {
   height: 10vw;
   padding: 1vw;
   font-size: 3.8vw;
+  line-height: 110%;
 }
 .form textarea {
   height: 64vw;
   padding: 2vw;
+  line-height: 110%;
 }
 .buttons-container .col {
   padding-top: 9vw;
