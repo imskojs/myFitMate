@@ -262,12 +262,6 @@ ion-content.has-subheader {
   padding-top: 9vw;
 }
 
-/************** General list content style ***************/
-
-
-
-
-
 /******************* General details list style ********************/
 
 .detail-title {
@@ -658,7 +652,7 @@ ion-content.has-subheader {
 /*************************************************/
 /*************** fitInfo ABSTRACT STATE***********/
 #fitInfo .category-ul {
-  width: 180vw;
+  width: 168vw;
   background: #434252;
 }
 #fitInfo .category-li {

@@ -4,7 +4,7 @@
 
     <ion-scroll direction="x" scrollbar-x=false delegate-handle="categoryMenu">
       <ul class="category-ul">
-        <li class="category-li" ng-repeat="category in categories" id="{{ $index }}" ng-click="subHeaderMenuScroller(categories, 'categoryMenu', $index, $event, 2.8)"><h2>{{ ::category.location }}</h2>
+        <li class="category-li" ng-repeat="category in categories" id="{{ $index }}" ng-click="subHeaderMenuScroller(categories, 'categoryMenu', $index, $event, 2.8);goToState(category.id)"><h2>{{ ::category.location }}</h2>
         </li>
       </ul>
     </ion-scroll>
