@@ -57,6 +57,10 @@ $scope.processComment = function(createdComment){
   )
 };
 
+$scope.processDeleteComment = function ($index, commentObj){
+
+}
+
 
 
 // END 

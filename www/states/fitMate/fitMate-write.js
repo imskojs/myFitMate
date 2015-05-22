@@ -27,6 +27,7 @@ $scope.processPost = function (content){
   if(!Data.fitMate.details.requestCorrection){
     content.category = Data.fitMate.selectedCategory.data;
     content.createdBy = Data.init.login.userName;
+    content.createdById = Data.init.login.userId
     $.post.send(content)
     .then(
       function (response){
