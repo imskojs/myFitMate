@@ -14,8 +14,8 @@
 
       <div class="row detail-content-wrapper relative">
         <img src="img/skoPic.png" alt="개시자 포토" class="poster-image absolute">
-        <div class="manage-post absolute"></div>
-        <div class="manage-choice absolute">
+        <div class="manage-post absolute" ng-click="manage = !manage"></div>
+        <div class="manage-choice absolute" ng-show="manage">
 
           <div>
             <div ng-click="processCorrect()">수정</div>
@@ -54,11 +54,11 @@
           <div class="row input-container">
             <div class="col col-4"></div>
             <div class="col input">
-              <textarea></textarea>
+              <textarea ng-model="createdComment.content"></textarea>
             </div>
             <div class="col col-2"></div>
             <div class="col col-18 comment-button">
-              <button class="button button-positive">COMMENT</button>
+              <button class="button button-positive" ng-click="processComment(createdComment)">COMMENT</button>
             </div>
             <div class="col col-4"></div>
           </div>
@@ -66,12 +66,12 @@
           <div class="row comments-list">
             <div class="col">
               <ul>
-                <li>
-                  <h3>Lim Kyung Wha <span>2015.01.01.15:30</span></h3>
-                  <p>강남구 역삼동 역삼 공원쪽에 사는 임경화에요! 저도 그 클래스 보고 고민 고민 하던 중이었는데!! 같이 하실레요~?</p>
-                  <div class="x"></div>
+                <li ng-repeat="comment in currentPost.comments">
+                  <h3> {{ comment.createdBy }}<span>{{ comment.createdAt }}</span></h3>
+                  <p>{{ comment.content }}</p>
+                  <div class="x" ng-click="processDeleteComment($index)"></div>
                 </li>
-                <li>
+<!--                 <li>
                   <h3>Lee Yeon Hee <span>2015.01.01.15:30</span></h3>
                   <p>아 경화님, 코멘트 감사드려요~ 네! 좋아요, 그럼 언제 신청하러 가실건가요! 번호 남겨주세요!</p>
                   <div class="x"></div>
@@ -86,7 +86,7 @@
                   <p>아 경화님, 코멘트 감사드려요~ 네! 좋아요, 그럼 언제 신청하러 가실건가요! 번호 남겨주세요!</p>
                   <div class="x"></div>
                 </li>
-              </ul>
+ -->              </ul>
             </div>
           </div>
 

@@ -1,10 +1,13 @@
 angular.module('myFitMate')
 .controller('fitMate.details',function(
-  $scope, Data, Utility, $timeout
+  $scope, Data, Utility, $timeout, $animate
 ){ $scope.$on('$ionicView.beforeEnter', function(){
 
 var $ = Utility;
 //Get and load post
+$scope.manage = false;
+$scope.createdComment={};
+
 $.startLoading();
 $.post.getById( $.getStateParam('fitMatePostId') )
 .then(
@@ -29,10 +32,29 @@ $scope.processDelete = function (){
       $scope.currentPost = {};
       $.warningMessage('포스트 내용이 지워졌습니다.');
       $timeout($.goToState.bind(null, 'fitMate.list'), 1500);
-    }
+    },
+    $.errorMessage.bind(null, '삭제못하는 내용입니다.')
   );
 };
 
+$scope.processComment = function(createdComment){
+  createdComment.createdBy = Data.init.login.userName;
+  createdComment.post = $.getStateParam('fitMatePostId');
+  $.comment.send(createdComment)
+  .then(
+    function(response){
+      $scope.createdComment = {}
+      $.post.getById( $.getStateParam('fitMatePostId') )
+      .then( 
+        function(response){
+          $scope.currentPost = response;
+        },
+        $.errorMessage.bind(null, '삭제된 내용입니다.')
+      )
+    },
+    $.errorMessage.bind(null, '댓글을 달수가 없습니다.')
+  );
+}
 
 
 
