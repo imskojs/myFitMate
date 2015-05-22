@@ -1,39 +1,41 @@
 angular.module('myFitMate')
 .controller('fitMate.details',function(
-  $scope, Data, Utility
-){
+  $scope, Data, Utility, $timeout
+){ $scope.$on('$ionicView.beforeEnter', function(){
+
 var $ = Utility;
 //Get and load post
-$scope.$on('$ionicView.beforeEnter', function(){
-  $.startLoading();
-  $.post.getById( $.getStateParam('fitMatePostId') )
-  .then(
-    function( response ){
-      $scope.currentPost = response;
-      $.stopLoading();
-    },
-    $.errorMessage.bind(null, '삭제된 내용입니다.')
-  );
-});
+$.startLoading();
+$.post.getById( $.getStateParam('fitMatePostId') )
+.then(
+  function( response ){
+    $scope.currentPost = response;
+    $.stopLoading();
+  },
+  $.errorMessage.bind(null, '삭제된 내용입니다.')
+);
 //correcting post;
 $scope.processCorrect = function () {
-  // set correction parameter to true
   Data.fitMate.details.requestCorrection = true;
   Data.fitMate.details.correctionPostId = $.getStateParam('fitMatePostId');
-  // move to fiMate.write state
   $.goToState('fitMate.write');
-  // check fitMatePostId param
-  // load post with fitMatePostId
-  // if correction parameter is true then request update existing
-  // change text from register to update.
-  // else request post new post.
-  // on update set correction parameter to false.
-  // move to corrected post.
 }
 
+$scope.processDelete = function (){
+  // delete post with current stateParam
+  $.post.delete($.getStateParam('fitMatePostId'))
+  .then(
+    function (response){
+      $scope.currentPost = {};
+      $.warningMessage('포스트 내용이 지워졌습니다.');
+      $timeout($.goToState.bind(null, 'fitMate.list'), 1500);
+    }
+  );
+};
 
 
 
 
-// END
+// END 
+});
 });

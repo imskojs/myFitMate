@@ -37,15 +37,18 @@ $scope.processPost = function (content){
       $.errorMessage.bind(null, '제목과 내용을 입력해주세요')
     );
   } else {
+    Data.fitMate.details.requestCorrection = false;
     var parts = {};
     parts.title = content.title;
     parts.content = content.content
+
     $.post.update(Data.fitMate.details.correctionPostId, parts)
     .then(
       function (response){
         $.post.resetPost(content);
         $.stopLoading();
         $.goToState('fitMate.details', {fitMatePostId: response.postId})
+        Data.fitMate.details.correctionPostId = null;
       }, 
       $.errorMessage.bind(null, '제목과 내용을 입력해주세요')
     )
