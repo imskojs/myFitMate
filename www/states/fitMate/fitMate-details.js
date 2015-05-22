@@ -44,18 +44,18 @@ $scope.processComment = function(createdComment){
   .then(
     function(response){
       $scope.createdComment = {}
-      $.post.getById( $.getStateParam('fitMatePostId') )
-      .then( 
-        function(response){
-          $scope.currentPost = response;
-          $.warningMessage('댓글을 다셨습니다. 멋진 FITMATE가 곧 생길꺼에요!');
-        },
-        $.errorMessage.bind(null, '삭제된 내용입니다.')
-      )
+      return $.post.getById( $.getStateParam('fitMatePostId') );
     },
     $.errorMessage.bind(null, '댓글을 달수가 없습니다.')
-  );
-}
+  )
+  .then( 
+    function(response){
+      $scope.currentPost = response;
+      $.warningMessage('댓글을 다셨습니다. 멋진 FITMATE가 곧 생길꺼에요!');
+    },
+    $.errorMessage.bind(null, '삭제된 내용입니다.')
+  )
+};
 
 
 
