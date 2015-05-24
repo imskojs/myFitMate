@@ -12,7 +12,7 @@ $scope.buttonText= "등록하기"
 if(Data.fitMate.details.requestCorrection){
   $scope.buttonText = "수정하기";
   $.startLoading();
-  $.post.getById(Data.fitMate.details.correctionPostId)
+  $.Post.findOne({id: Data.fitMate.details.correctionPostId})
   .then(
     function(response){
       $scope.form = response;
@@ -28,10 +28,10 @@ $scope.processPost = function (content){
     content.category = Data.fitMate.selectedCategory.data;
     content.createdBy = Data.init.login.userName;
     content.createdById = Data.init.login.userId
-    $.post.send(content)
+    $.Post.create(content)
     .then(
       function (response){
-        $.post.resetPost(content);
+        $.Post.resetPost(content);
         $.stopLoading();
         $.goToState('fitMate.details', {fitMatePostId: response.postId})
       }, 
@@ -43,10 +43,10 @@ $scope.processPost = function (content){
     parts.title = content.title;
     parts.content = content.content
 
-    $.post.update(Data.fitMate.details.correctionPostId, parts)
+    $.Post.update({id: Data.fitMate.details.correctionPostId}, parts)
     .then(
       function (response){
-        $.post.resetPost(content);
+        $.Post.resetPost(content);
         $.stopLoading();
         $.goToState('fitMate.details', {fitMatePostId: response.postId})
         Data.fitMate.details.correctionPostId = null;

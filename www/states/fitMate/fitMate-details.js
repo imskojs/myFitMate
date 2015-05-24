@@ -9,9 +9,10 @@ $scope.manage = false;
 $scope.createdComment={};
 
 $.startLoading();
-$.post.getById( $.getStateParam('fitMatePostId') )
+$.Post.findOne( {id: $.getStateParam('fitMatePostId')} )
 .then(
   function( response ){
+    console.log('{}')
     $scope.currentPost = response;
     $.stopLoading();
   },
@@ -26,7 +27,7 @@ $scope.processCorrect = function () {
 
 $scope.processDelete = function (){
   // delete post with current stateParam
-  $.post.delete($.getStateParam('fitMatePostId'))
+  $.Post.destroy({id: $.getStateParam('fitMatePostId')})
   .then(
     function (response){
       $scope.currentPost = {};
@@ -40,10 +41,10 @@ $scope.processDelete = function (){
 $scope.processComment = function(createdComment){
   createdComment.createdBy = Data.init.login.userName;
   createdComment.post = $.getStateParam('fitMatePostId');
-  $.comment.send(createdComment)
+  $.Comment.create(createdComment)
   .then(function(response){
     $scope.createdComment = {}
-    return $.post.getById( $.getStateParam('fitMatePostId') );
+    return $.Post.findOne( {id: $.getStateParam('fitMatePostId')} );
   }, function (error){
     $.errorMessage('댓글을 달수가 없습니다.');
   })
