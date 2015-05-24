@@ -41,24 +41,29 @@ $scope.processComment = function(createdComment){
   createdComment.createdBy = Data.init.login.userName;
   createdComment.post = $.getStateParam('fitMatePostId');
   $.comment.send(createdComment)
-  .then(
-    function(response){
-      $scope.createdComment = {}
-      return $.post.getById( $.getStateParam('fitMatePostId') );
-    },
-    $.errorMessage.bind(null, '댓글을 달수가 없습니다.')
-  )
-  .then( 
-    function(response){
-      $scope.currentPost = response;
-      $.warningMessage('댓글을 다셨습니다. 멋진 FITMATE가 곧 생길꺼에요!');
-    },
-    $.errorMessage.bind(null, '삭제된 내용입니다.')
-  )
+  .then(function(response){
+    $scope.createdComment = {}
+    return $.post.getById( $.getStateParam('fitMatePostId') );
+  }, function (error){
+    $.errorMessage('댓글을 달수가 없습니다.');
+  })
+  .then(function(response){
+    $scope.currentPost = response;
+    $.warningMessage('댓글을 다셨습니다. 멋진 FITMATE가 곧 생길꺼에요!');
+  }, function (error){
+    $.errorMessage('삭제된 내용입니다.');
+  })
 };
 
 $scope.processDeleteComment = function ($index, commentObj){
+  // Check currentUserID is the same as createdById of the post
 
+
+  // get comment.id
+  // send delete request by id DELETE comment/44
+  // send get request byPostId by current stateParams.
+  // Message "뎃글이 지워졌습니다."
+  // update $scope.currentPost
 }
 
 
