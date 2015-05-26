@@ -119,17 +119,21 @@ angular.module('myFitMate', ['ionic'])
     controller: 'fitInfo'
   })
   .state('fitInfo.list', {
-    url: "/list",
-    templateUrl: "states/fitInfo/fitInfo-list.html"
+    url: "/list/:location",
+    templateUrl: "states/fitInfo/fitInfo-list.html",
+    controller: 'fitInfo.list'
   })
   .state('fitInfo.write', {
-    url: "/write/:infoPostId",
-    templateUrl: "states/fitInfo/fitInfo-write.html"
+    url: "/write",
+    templateUrl: "states/fitInfo/fitInfo-write.html",
+    controller: 'fitInfo.write'
   })
 
   .state('fitInfo.details', {
-    url: "/details/:locationId",
-    templateUrl: "states/fitInfo/fitInfo-details.html"
+    url: "/details",
+    templateUrl: "states/fitInfo/fitInfo-details.html",
+    params: {fitInfoPostId: null},
+    controller: 'fitInfo.details'
   })
 
   //////////////////////////////////////

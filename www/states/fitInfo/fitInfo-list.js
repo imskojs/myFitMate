@@ -6,22 +6,22 @@ angular.module('myFitMate')
 var $ = Utility;
 
 $scope.goTo = function (post){
-  $.goTo('fitMate.details', {fitMatePostId: post.postId});
+  $.goTo('fitInfo.details', {fitInfoPostId: post.postId});
 }
 
 $scope.moreData = function (){
-  return Data.fitMate.moreData;
+  return Data.fitInfo.moreData;
 }
 
 $scope.loadMore = function (){
-  $.Post.findOld({category: Data.fitMate.selectedCategory.data, number: '10', postId: Data.fitMate.lastPost.postId})
+  $.Post.findOld({category: Data.fitInfo.selectedCategory.data, number: '10', postId: Data.fitInfo.lastPost.postId})
   .then(function(response){
     response.posts.forEach(function (post){
       $scope.posts.push(post)
     })
     $scope.$broadcast('scroll.infiniteScrollComplete')
-    Data.fitMate.lastPost = $scope.posts[$scope.posts.length -1];
-    console.dir(Data.fitMate.lastPost);
+    Data.fitInfo.lastPost = $scope.posts[$scope.posts.length -1];
+    console.dir(Data.fitInfo.lastPost);
   })
 }
 
