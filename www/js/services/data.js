@@ -119,6 +119,31 @@ angular.module('myFitMate')
         requestCorrection: false,
         correctionPostId: null
       }
+    },
+    
+    event: {
+      firstVisit: true,
+      categories: [
+        { id: 31, type: '이벤트', data: 'EVENT' }
+      ],
+      selectedCategory: { id: 31, type: '이벤트', data: 'EVENT' },
+      moreData: null,
+      lastPost: {},
+
+      write: {
+        form: {
+          title: '',
+          content: '',
+          category: '',
+          createdBy: '',
+          viewCount: 0
+        },
+        cachedPost: {}
+      },
+      details: {
+        requestCorrection: false,
+        correctionPostId: null
+      }
     }
     
   };

@@ -1,5 +1,5 @@
 angular.module('myFitMate')
-.controller('consult', function(
+.controller('event', function(
   $scope, Data, Utility, $timeout
 ){
   Data.consult.moreData = false;

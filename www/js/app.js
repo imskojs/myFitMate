@@ -169,21 +169,26 @@ angular.module('myFitMate', ['ionic'])
   .state('event', {
     abstract: true,
     url: "/event",
-    templateUrl: "states/event/event.html"
+    templateUrl: "states/event/event.html",
+    controller: 'event'
   })
 
   .state('event.list', {
     url: "/list",
-    templateUrl: "states/event/event-list.html"
+    templateUrl: "states/event/event-list.html",
+    controller: 'event.list'
   })
   .state('event.write', {
     url: "/write",
-    templateUrl: "states/event/event-write.html"
+    templateUrl: "states/event/event-write.html",
+    controller: 'event.write'
   })
 
   .state('event.details', {
-    url: "/event",
-    templateUrl: "states/event/event-details.html"
+    url: "/details",
+    templateUrl: "states/event/event-details.html",
+    params: {eventPostId: null},
+    controller: 'event.details'
   });
 
   $urlRouterProvider.otherwise('/init/login');
