@@ -4,7 +4,7 @@ angular.module('myFitMate')
 ){ $scope.$on('$ionicView.beforeEnter', function(){
 
 var $ = Utility;
-
+//start
 $scope.goTo = function (post){
   $.goTo('fitInfo.details', {fitInfoPostId: post.postId});
 }
