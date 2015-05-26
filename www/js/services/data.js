@@ -14,7 +14,7 @@ angular.module('myFitMate')
           { id: 27, type: '필라테스', data: 'PILATES'  },
           { id: 28, type: '요가', data: 'YOGA'  },
           { id: 29, type: '복싱', data: 'BOXING'  },
-          { id: 30, type: '클라이밍', data: 'CLIMING'  }
+          { id: 30, type: '클라이밍', data: 'CLIMBING'  }
         ],
         selectedOption: { id: 25, type: '헬스/트레이닝', data: 'HEALTH'  }
       } 
@@ -49,6 +49,8 @@ angular.module('myFitMate')
         { id: 24, location: '중량구', data: 'JOONGRYANG' },
       ],
       selectedCategory: {},
+      moreData: null,
+      lastPost: {},
         
       write: {
         form: {
@@ -72,7 +74,7 @@ angular.module('myFitMate')
         { id: 27, type: '필라테스', data: 'PILATES'  },
         { id: 28, type: '요가', data: 'YOGA'  },
         { id: 29, type: '복싱', data: 'BOXING'  },
-        { id: 30, type: '클라이밍', data: 'CLIMING'  }
+        { id: 30, type: '클라이밍', data: 'CLIMBING'  }
       ],
       selectedCategory: { id: 0, type: '헬스/트레이닝', data:'HEALTH' }
     }

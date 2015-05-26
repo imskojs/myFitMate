@@ -22,7 +22,8 @@
     </ul>
 
     <ion-infinite-scroll
-    ng-if="true"
+      ng-if="moreData()"
+      immediate-check="false"
       on-infinite="loadMore()"
       distance="1%">
     </ion-infinite-scroll>
