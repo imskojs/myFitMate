@@ -68,6 +68,7 @@ angular.module('myFitMate')
       }
     },
     fitInfo: {
+      firstVisit: true,
       categories: [
         { id: 25, type: '헬스/트레이닝', data: 'HEALTH' },
         { id: 26, type: '에어로빅', data: 'AEROBIC'  },
@@ -76,7 +77,24 @@ angular.module('myFitMate')
         { id: 29, type: '복싱', data: 'BOXING'  },
         { id: 30, type: '클라이밍', data: 'CLIMBING'  }
       ],
-      selectedCategory: { id: 0, type: '헬스/트레이닝', data:'HEALTH' }
+      selectedCategory: {},
+      moreData: null,
+      lastPost: {},
+
+      write: {
+        form: {
+          title: '',
+          content: '',
+          category: '',
+          createdBy: '',
+          viewCount: 0
+        },
+        cachedPost: {}
+      },
+      details: {
+        requestCorrection: false,
+        correctionPostId: null
+      }
     }
     
   };
