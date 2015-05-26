@@ -8,60 +8,85 @@ var $ = Utility;
 $scope.manage = false;
 $scope.createdComment={};
 
-$.startLoading();
+//Load with given stateParam
+$.loadingOn();
 $.Post.findOne( {id: $.getStateParam('fitMatePostId')} )
-.then(
-  function( response ){
-    console.log('{}')
-    $scope.currentPost = response;
-    $.stopLoading();
-  },
+.then(function( response ){
+  $scope.currentPost = response;
+  $.loadingOff();
+})
+.catch(
   $.errorMessage.bind(null, '삭제된 내용입니다.')
 );
-//correcting post;
-$scope.processCorrect = function () {
+
+//Pre-updatePost, logic to move to updating page with params;
+$scope.updatePost = function () {
   Data.fitMate.details.requestCorrection = true;
   Data.fitMate.details.correctionPostId = $.getStateParam('fitMatePostId');
-  $.goToState('fitMate.write');
+  $.goTo('fitMate.write');
 }
 
-$scope.processDelete = function (){
+// Delete Post
+$scope.destroyPost = function (){
+  // TODO: Check currentUserId is the same as createdById of the post.
+
   // delete post with current stateParam
   $.Post.destroy({id: $.getStateParam('fitMatePostId')})
-  .then(
-    function (response){
-      $scope.currentPost = {};
-      $.warningMessage('포스트 내용이 지워졌습니다.');
-      $timeout($.goToState.bind(null, 'fitMate.list'), 1500);
-    },
+  .then(function (response){
+    $scope.currentPost = {};
+    $.warningMessage('포스트 내용이 지워졌습니다.');
+    $timeout($.goTo.bind(null, 'fitMate.list'), 1500);
+  })
+  .catch(
     $.errorMessage.bind(null, '삭제못하는 내용입니다.')
   );
 };
 
-$scope.processComment = function(createdComment){
-  createdComment.createdBy = Data.init.login.userName;
-  createdComment.post = $.getStateParam('fitMatePostId');
-  $.Comment.create(createdComment)
+// Create Comment for this post, then re-query same post
+$scope.createComment = function(commentObj){
+  // add comment creator detail
+  commentObj.createdBy = Data.init.login.userName;
+  // comment containing post detail
+  commentObj.post = $.getStateParam('fitMatePostId');
+  // create comment
+  $.Comment.create(commentObj)
+    // reload post with comments added
   .then(function(response){
-    $scope.createdComment = {}
+    $scope.commentObj = {}
     return $.Post.findOne( {id: $.getStateParam('fitMatePostId')} );
   }, function (error){
     $.errorMessage('댓글을 달수가 없습니다.');
   })
   .then(function(response){
     $scope.currentPost = response;
+    $scope.createdComment.content = '';
     $.warningMessage('댓글을 다셨습니다. 멋진 FITMATE가 곧 생길꺼에요!');
   }, function (error){
     $.errorMessage('삭제된 내용입니다.');
   })
 };
 
-$scope.processDeleteComment = function ($index, commentObj){
-  // Check currentUserID is the same as createdById of the post
+$scope.destroyComment = function (commentObj){
+  // TODO: Check currentUserID is the same as createdById of the post
 
+  // {content: 'hello', createdAt: '2015/05/26 09:14:53', createdBy:'Seunghoon Ko', id: 99, post: 163}
+  console.log(commentObj)
 
   // get comment.id
-  // send delete request by id DELETE comment/44
+  var id = commentObj.id
+  // send delete request by id 
+  $.Comment.destroy({id: commentObj.id})
+  .then(function(){
+    $.warningMessage('댓글을 지우셨습니다.');
+    return $.Post.findOne({id: $.getStateParam('fitMatePostId')})
+  })
+  .then(function(updatedPost){
+    $scope.currentPost = updatedPost;
+  })
+  .catch(function(error){
+    $.errorMessage('댓글을 삭제할수 없습니다.')
+  })
+
   // send get request byPostId by current stateParams.
   // Message "뎃글이 지워졌습니다."
   // update $scope.currentPost
