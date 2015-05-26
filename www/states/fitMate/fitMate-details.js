@@ -70,8 +70,6 @@ $scope.destroyComment = function (commentObj){
   // TODO: Check currentUserID is the same as createdById of the post
 
   // {content: 'hello', createdAt: '2015/05/26 09:14:53', createdBy:'Seunghoon Ko', id: 99, post: 163}
-  console.log(commentObj)
-
   // get comment.id
   var id = commentObj.id
   // send delete request by id 

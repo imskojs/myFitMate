@@ -20,6 +20,7 @@ angular.module('myFitMate')
       } 
     },
     fitMate: {
+      firstVisit: true,
       categories: [
         { id: 0, location: '강남구', data: 'KANGNAM' },
         { id: 1, location: '강동구', data: 'KANGDONG' },
@@ -47,7 +48,8 @@ angular.module('myFitMate')
         { id: 23, location: '중구', data: 'JOONG' },
         { id: 24, location: '중량구', data: 'JOONGRYANG' },
       ],
-      selectedCategory: { id: 0, location: '강남구', data: 'KANGNAM' },
+      selectedCategory: {},
+        
       write: {
         form: {
           title: '',

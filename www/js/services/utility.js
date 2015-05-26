@@ -170,8 +170,8 @@ var resetPost = function (post) {
 ///////////////////////   OBJECT   //////////////////////
 var Post = {
   find: find.bind(null, '/blog/list'),
-  findNew: find.bind(null, 'blog/list/new'),
-  findOld: find.bind(null, 'blog/list/old'),
+  findNew: find.bind(null, '/blog/list/new'),
+  findOld: find.bind(null, '/blog/list/old'),
   findOne: findOne.bind(null, '/blog/post'),
   create: create.bind(null, '/blog/post/create'),
   update: update.bind(null, '/post'),

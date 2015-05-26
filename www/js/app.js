@@ -94,6 +94,7 @@ angular.module('myFitMate', ['ionic'])
   .state('fitMate.list', {
     url: "/list/:location",
     templateUrl: "states/fitMate/fitMate-list.html",
+    controller: 'fitMate.list'
   })
 
   .state('fitMate.write', {
