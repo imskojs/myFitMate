@@ -38,6 +38,7 @@ $scope.createPost = function (content){
   }
   promiseObj
   .then (function (response){
+  console.log('test')
     Data.fitInfo.details.correctionPostId = null;
     $.Post.resetPost(content);
     $.loadingOff();
