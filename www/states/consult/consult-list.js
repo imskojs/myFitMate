@@ -1,27 +1,41 @@
 angular.module('myFitMate')
-.controller('fitInfo.list', function(
+.controller('consult.list', function(
   $scope, Data, Utility, $timeout
 ){ $scope.$on('$ionicView.beforeEnter', function(){
-
 var $ = Utility;
+
+$.Post.find({category: 'CONSULT', number: '10'})
+.then(function(response){
+  console.log(123)
+  $scope.posts = response.posts;
+  if(response.posts.length === 10){
+    Data.consult.moreData = true;
+  } else {
+    Data.consult.moreData = false;
+  }
+  Data.consult.lastPost = response.posts[response.posts.length - 1];
+}, function (error){
+    $.errorMessage.bind(null, '요청하신 자료가 없습니다.');
+})
+
 //start
 $scope.goTo = function (post){
-  $.goTo('fitInfo.details', {fitInfoPostId: post.postId});
+  $.goTo('consult.details', {consultPostId: post.postId});
 }
 
 $scope.moreData = function (){
-  return Data.fitInfo.moreData;
+  return Data.consult.moreData;
 }
 
 $scope.loadMore = function (){
-  $.Post.findOld({category: Data.fitInfo.selectedCategory.data, number: '10', postId: Data.fitInfo.lastPost.postId})
+  $.Post.findOld({category: Data.consult.selectedCategory.data, number: '10', postId: Data.consult.lastPost.postId})
   .then(function(response){
     response.posts.forEach(function (post){
       $scope.posts.push(post)
     })
     $scope.$broadcast('scroll.infiniteScrollComplete')
-    Data.fitInfo.lastPost = $scope.posts[$scope.posts.length -1];
-    console.dir(Data.fitInfo.lastPost);
+    Data.consult.lastPost = $scope.posts[$scope.posts.length -1];
+    console.dir(Data.consult.lastPost);
   })
 }
 

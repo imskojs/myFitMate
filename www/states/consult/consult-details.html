@@ -1,22 +1,25 @@
-<ion-view view-title="상담하기" id="consult-details">
+<ion-view view-title="상담하기" id="consult-details" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-android-arrow-back" ng-click="goBack()"></button>
+  </ion-nav-buttons>
     <ion-content>
 
       <div class="row detail-title">
         <div class="col col-5"></div>
         <div class="col">
-          <h2> 강남구 역삼동 같이 요가 하실 여성 분 찾아요~ </h2>
-          <p><span>Lee Yeon Hee</span> / 2015. 01. 05 15:30 조회 638 </p>
+          <h2> {{ currentPost.title }}</h2>
+          <p><span>{{ currentPost.createdBy }}</span> / {{ currentPost.createdAt }} 조회 {{ currentPost.viewCount }} </p>
         </div>
       </div>
 
       <div class="row detail-content-wrapper relative">
         <img src="img/skoPic.png" alt="개시자 포토" class="poster-image absolute">
-        <div class="manage-post absolute"></div>
-        <div class="manage-choice absolute">
+        <div class="manage-post absolute" ng-click="manage = !manage"></div>
+        <div class="manage-choice absolute" ng-show="manage">
 
           <div>
-            <div>수정</div>
-            <div>삭제</div>
+            <div ng-click="updatePost()">수정</div>
+            <div ng-click="destroyPost()">삭제</div>
           </div>
 
         </div>
@@ -27,11 +30,8 @@
           <div class="row">
             <div class="col"></div>
             <div class="col col-84 detail-content">
-              <h3>Lee Yeon Hee <span class="small">2015.01.01 15:30</span></h3>
-              <p>강남구 역삼동에 사는 이연희 라고 합니다. 
-                역삼동 파워 퓌트니스에서 직장인 반 요가 클래스가 있는데, 수업이
-                끝나면 시간이 늦어 혼자 다니기가 고민되서요 ㅠ 
-                같은 지역 사시는 여성 분들 중 같이 요가 배워보실분 찾습니다~
+              <h3>{{ currentPost.createdBy }} <span class="small">{{ currentPost.createdAt }}</span></h3>
+              <p> {{ currentPost.content }}
               </p>
             </div>
             <div class="col"></div>
@@ -40,7 +40,7 @@
           <div class="row detail-content-bottom">
             <div class="col col-2"></div>
             <div class="col bottom-content">
-              <span class="arrow"></span> <p>댓글: <span>96</span></p> 
+              <span class="arrow"></span> <p>댓글: <span>{{currentPost.comments.length}}</span></p> 
             </div>
           </div>
 
@@ -54,11 +54,11 @@
           <div class="row input-container">
             <div class="col col-4"></div>
             <div class="col input">
-            <textarea></textarea>
+              <textarea ng-model="createdComment.content"></textarea>
             </div>
             <div class="col col-2"></div>
             <div class="col col-18 comment-button">
-              <button class="button button-positive">COMMENT</button>
+              <button class="button button-positive" ng-click="createComment(createdComment)">COMMENT</button>
             </div>
             <div class="col col-4"></div>
           </div>
@@ -66,25 +66,10 @@
           <div class="row comments-list">
             <div class="col">
               <ul>
-                <li>
-                  <h3>Lim Kyung Wha <span>2015.01.01.15:30</span></h3>
-                  <p>강남구 역삼동 역삼 공원쪽에 사는 임경화에요! 저도 그 클래스 보고 고민 고민 하던 중이었는데!! 같이 하실레요~?</p>
-                  <div class="x"></div>
-                </li>
-                <li>
-                  <h3>Lee Yeon Hee <span>2015.01.01.15:30</span></h3>
-                  <p>아 경화님, 코멘트 감사드려요~ 네! 좋아요, 그럼 언제 신청하러 가실건가요! 번호 남겨주세요!</p>
-                  <div class="x"></div>
-                </li>
-                <li>
-                  <h3>Lim Kyung Wha <span>2015.01.01.15:30</span></h3>
-                  <p>강남구 역삼동 역삼 공원쪽에 사는 임경화에요! 저도 그 클래스 보고 고민 고민 하던 중이었는데!! 같이 하실레요~?</p>
-                  <div class="x"></div>
-                </li>
-                <li>
-                  <h3>Lee Yeon Hee <span>2015.01.01.15:30</span></h3>
-                  <p>아 경화님, 코멘트 감사드려요~ 네! 좋아요, 그럼 언제 신청하러 가실건가요! 번호 남겨주세요!</p>
-                  <div class="x"></div>
+                <li ng-repeat="comment in currentPost.comments">
+                  <h3> {{ comment.createdBy }}<span>{{ comment.createdAt }}</span></h3>
+                  <p>{{ comment.content }}</p>
+                  <div class="x" ng-click="destroyComment(comment)"></div>
                 </li>
               </ul>
             </div>

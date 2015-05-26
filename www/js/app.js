@@ -142,21 +142,26 @@ angular.module('myFitMate', ['ionic'])
   .state('consult', {
     abstract: true,
     url: "/consult",
-    templateUrl: "states/consult/consult.html"
+    templateUrl: "states/consult/consult.html",
+    controller: 'consult'
   })
 
   .state('consult.list', {
     url: "/list",
-    templateUrl: "states/consult/consult-list.html"
+    templateUrl: "states/consult/consult-list.html",
+    controller: 'consult.list'
   })
   .state('consult.write', {
     url: "/write",
-    templateUrl: "states/consult/consult-write.html"
+    templateUrl: "states/consult/consult-write.html",
+    controller: 'consult.write'
   })
 
   .state('consult.details', {
-    url: "/details:consultPostId",
-    templateUrl: "states/consult/consult-details.html"
+    url: "/details",
+    templateUrl: "states/consult/consult-details.html",
+    params: {consultPostId: null},
+    controller: 'consult.details'
   })
   //////////////////////////////////////
   //////////////  6 Event  /////////////

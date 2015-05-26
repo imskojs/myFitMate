@@ -1,5 +1,5 @@
 angular.module('myFitMate')
-.controller('fitInfo.write', function(
+.controller('consult.write', function(
   $scope, Data, Utility
 ){ $scope.$on('$ionicView.beforeEnter', function(){
 var $ = Utility;
@@ -7,10 +7,10 @@ $scope.buttonText= "등록하기";
 $scope.form = {};
 
 (function createOrUpdateChecker(){
-  if(Data.fitInfo.details.requestCorrection){
+  if(Data.consult.details.requestCorrection){
     $scope.buttonText = "수정하기";
     $.loadingOn();
-    $.Post.findOne({id: Data.fitInfo.details.correctionPostId})
+    $.Post.findOne({id: Data.consult.details.correctionPostId})
     .then(function(response){
       $scope.form = response;
       $.loadingOff();
@@ -24,25 +24,25 @@ $scope.form = {};
 $scope.createPost = function (content){
   $.loadingOn();
   var promiseObj = {};
-  if(!Data.fitInfo.details.requestCorrection){
-    content.category = Data.fitInfo.selectedCategory.data;
+  if(!Data.consult.details.requestCorrection){
+    content.category = "CONSULT";
     content.createdBy = Data.init.login.userName;
     content.createdById = Data.init.login.userId
     promiseObj = $.Post.create(content)
   } else {
-    Data.fitInfo.details.requestCorrection = false;
+    Data.consult.details.requestCorrection = false;
     var parts = {};
     parts.title = content.title;
     parts.content = content.content
-    promiseObj = $.Post.update({id: Data.fitInfo.details.correctionPostId}, parts)
+    promiseObj = $.Post.update({id: Data.consult.details.correctionPostId}, parts)
   }
   promiseObj
   .then (function (response){
   console.log('test')
-    Data.fitInfo.details.correctionPostId = null;
+    Data.consult.details.correctionPostId = null;
     $.Post.resetPost(content);
     $.loadingOff();
-    $.goTo('fitInfo.details', {fitInfoPostId: response.postId})
+    $.goTo('consult.details', {consultPostId: response.postId})
   }) 
   .catch(
     $.errorMessage.bind(null, '제목과 내용을 입력해주세요')
