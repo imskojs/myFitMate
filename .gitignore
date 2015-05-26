@@ -6,9 +6,7 @@ node_modules/
 platforms/
 plugins/
 resources/
+scss/
 
 .DS_Store
 www/img/
-www/js/
-www/lib/
-www/index.html
