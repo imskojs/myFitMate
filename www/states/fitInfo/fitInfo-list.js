@@ -1,5 +1,5 @@
 angular.module('myFitMate')
-.controller('fitMate.list', function(
+.controller('fitInfo.list', function(
   $scope, Data, Utility, $timeout
 ){ $scope.$on('$ionicView.beforeEnter', function(){
 
