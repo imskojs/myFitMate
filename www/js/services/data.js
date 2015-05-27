@@ -19,6 +19,28 @@ angular.module('myFitMate')
         selectedOption: { id: 25, type: '헬스/트레이닝', data: 'HEALTH'  }
       } 
     },
+    findFit: {
+      map: {
+        requestedLocations: [
+          {
+               title: '다음 커뮤니케이션', 
+               latlng: new daum.maps.LatLng(33.450705, 126.570677)
+           },
+           {
+               title: '생태연못', 
+               latlng: new daum.maps.LatLng(33.450936, 126.569477)
+           },
+           {
+               title: '텃밭', 
+               latlng: new daum.maps.LatLng(33.450879, 126.569940)
+           },
+           {
+               title: '근린공원',
+               latlng: new daum.maps.LatLng(33.451393, 126.570738)
+           }
+        ]
+      }
+    },
     fitMate: {
       firstVisit: true,
       categories: [
@@ -120,7 +142,7 @@ angular.module('myFitMate')
         correctionPostId: null
       }
     },
-    
+
     event: {
       firstVisit: true,
       categories: [

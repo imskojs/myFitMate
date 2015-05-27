@@ -59,7 +59,8 @@ angular.module('myFitMate', ['ionic'])
   })
   .state('findFit.map', {
     url: "/map", //modal()
-    templateUrl: "states/findFit/findFit-map.html"
+    templateUrl: "states/findFit/findFit-map.html",
+    controller: 'findFit.map'
   })
 
   //////////////////////////////////////

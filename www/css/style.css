@@ -549,6 +549,7 @@ ion-content.has-subheader {
 #main ion-content {
   top: 90.3vw;
 }
+
 #main .main-mid-bar {
   height: 10.5vw;
   background: url(../img/03_main_page/1080x1920/bar_under_image.png);
@@ -631,7 +632,37 @@ ion-content.has-subheader {
   margin-top: 4.6vw;
 }
 
-
+/* Resize media */
+@media only screen and (min-aspect-ratio: 5/8) {
+  #main ion-pane.main-top-bg {
+    background: url(../img/03_main_page/1080x1920/mainpage_resize.png) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 76.4vw;
+  }
+  #main ion-content {
+    top: 76.4vw;
+  }
+  #main .main-content .row:first-child{
+    margin-top: 1vw;
+  }
+  #main .main-content .row:nth-of-type(2){
+    margin-top: 4vw;
+  }
+  #main .main-content .row:nth-of-type(3){
+    margin-top: 2vw;
+  }
+}
+/*************************************************/
+/*****************  findFit  *********************/
+#findFit-map .scroll {
+  height: 100%;
+}
+#findFit-map .daum-map-container {
+  width: 100%;
+  height: 100%;
+}
+  
 /*************************************************/
 /*************** fitMate ABSTRACT STATE***********/
 #fitMate .category-ul {

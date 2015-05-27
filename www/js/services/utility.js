@@ -4,7 +4,7 @@ angular.module('myFitMate')
   $timeout 
 ){
 
-var serverUrl = "http://localhost:1337";
+var serverUrl = "http://192.168.0.65:1337";
 
   //Sub header menu scroller
 var subHeaderMenuScroller = function(arrayData, handle ,$index, $event, centerAtIndex){
