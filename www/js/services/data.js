@@ -21,7 +21,7 @@ angular.module('myFitMate')
     },
     findFit: {
       map: {
-        requestedLocations: [
+        locations: [
           {
                title: '다음 커뮤니케이션', 
                latlng: new daum.maps.LatLng(33.450705, 126.570677)

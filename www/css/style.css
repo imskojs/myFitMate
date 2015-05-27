@@ -662,7 +662,14 @@ ion-content.has-subheader {
   width: 100%;
   height: 100%;
 }
-  
+.modal {
+  background: transparent;
+}
+
+.modal .scroll-content {
+  background: rgba(0, 0, 0, 0.5);
+  top: 26vw;
+}
 /*************************************************/
 /*************** fitMate ABSTRACT STATE***********/
 #fitMate .category-ul {

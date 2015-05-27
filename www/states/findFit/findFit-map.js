@@ -1,6 +1,6 @@
 angular.module('myFitMate')
 .controller('findFit.map', function (
-$scope, Data, Utility, $timeout
+$scope, Data, Utility, $timeout, $ionicModal
 ){ $scope.$on('$ionicView.enter', function(){
 
 
@@ -14,37 +14,46 @@ var mapOptions = {
 }
 var map = new daum.maps.Map(DOM, mapOptions)
 
-var locs = Data.findFit.map.requestedLocations;
+var locs = Data.findFit.map.locations;
 
 // Marker style.
 var markerWidth = windowWidth * .111;
 var markerHeight = windowWidth * .055;
 var markerSrc = 'img/04_map/1080x1920/icon_map_unselect.png';
 
-//TODO iwContent dynamic
-var iwContent = '<div style="padding:5px"> Hello </div>';
-var infoWindow = new daum.maps.InfoWindow({
-  content: iwContent,
-  removable: true 
-});
+var markerSize = new daum.maps.Size(markerWidth, markerHeight);
+var markerImg = new daum.maps.MarkerImage(markerSrc, markerSize);
 
-for(var i = 0; i < locs.length; i++){
-  var markerSize = new daum.maps.Size(markerWidth, markerHeight);
-  var markerImg = new daum.maps.MarkerImage(markerSrc, markerSize);
+// Setting up modal.
+$ionicModal.fromTemplateUrl('states/misc/findFitModal.html', {
+  scope: $scope,
+  animation: 'slide-in-up'
+}).then(function(modal){
+  $scope.modal = modal;
+})
+// Create and attach event listener to markers
+locs.forEach(function(value, i, self){
   var marker = new daum.maps.Marker({
     map: map,
     position: locs[i].latlng,
     title: locs[i].title,
     image: markerImg,
     clickable: true
-  })
-  daum.maps.event.addListener(marker, 'click', function() {
-        // 마커 위에 인포윈도우를 표시합니다
-        console.log(marker)
-        infoWindow.open(map, marker);  
   });
-}
-
+  daum.maps.event.addListener(marker, 'click', function() {
+    // $scope.modal.show();
+    var marker = this;
+    console.log(marker.getPosition());
+    console.log(marker.getTitle());
+  });
+})
+// We have a data for each entity ordered.
+// request data for all entities
+// save to Data.findFit.map.locations
+// Make marker with LatLng, title as index number,
+//and attach click event for each marker.
+// on click get information at title (index) from the locations array
+// show modal with information in that array.
 
 
 
