@@ -8,7 +8,7 @@ $scope.categories = Data.fitInfo.categories;
 
 if(Data.fitInfo.firstVisit){
   $timeout(function (){
-    angular.element('#0').trigger('click');
+    angular.element('#25').trigger('click');
     Data.fitInfo.firstVisit = false;
   }, 0);
 }
