@@ -11,8 +11,13 @@
 
     <!-- <link href="css/ionic.app.min.css" rel="stylesheet"> -->
    
-    <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=1d77329135df78c95c219758f5fdddfb"></script>
-
+<!--     <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=1d77329135df78c95c219758f5fdddfb"></script>
+ -->     
+    <script>
+    window.daum=window.daum||{};(function(){var j=daum.maps=daum.maps||{};if(j.readyState===undefined){j.onloadcallbacks=[];j.readyState=0}else{if(j.readyState===2){return}}j.VERSION={ROADMAP:"2015pangyo",ROADMAP_SUFFIX:"",HYBRID:"2015pangyo",SR:"2.00",ROADVIEW:"2.00",ROADVIEW_FLASH:"150409"};j.RESOURCE_PATH={ROADVIEW_AJAX:"//s1.daumcdn.net/svc/attach/U03/cssjs/mapapi/ajax/150319/1426738302516/roadview.js"};var d=location.protocol=="https:"?"https:":"http:";var c=document.getElementsByTagName("script");var b=c[c.length-1].src;
+    c=null;var p=j.onloadcallbacks;var e=[],f="";var g={v3:d+"//s1.daumcdn.net/svc/attach/U03/cssjs/mapapi/1432185973201/open.js",services:d+"//s1.daumcdn.net/svc/attach/U03/cssjs/mapapi/libs/1425519149834/services.js",drawing:d+"//s1.daumcdn.net/svc/attach/U03/cssjs/mapapi/libs/1430894684893/drawing.js"};var h=n(b);f=h.apikey;if(f){j.apikey=f}var o=h.libraries;e=o?o.split(","):[];if(h.autoload!=="false"){q(g.v3);for(var m=0;m<e.length;m++){q(g[e[m]])}j.readyState=2}function n(r){var i={};r.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,t,u){i[t]=u});return i}function q(i){if(!i){return}document.write('<script charset="UTF-8" src="'+i+'"><\/script>')}function l(){var r=e.length?function(){for(var t=0;
+    t<e.length;t++){var s=a(g[e[t]],k);s.start()}}:k;var i=a(g.v3,r);i.start()}function a(r,s){var i=document.createElement("script");i.charset="utf-8";i.onload=s;i.onreadystatechange=function(){if(/loaded|complete/.test(this.readyState)){s()}};return{start:function(){i.src=r||"";document.getElementsByTagName("head")[0].appendChild(i);i=null}}}function k(){while(p[0]){p.shift()()}j.readyState=2}j.load=function(i){p.push(i);switch(j.readyState){case 0:j.readyState=1;l();break;case 2:k()}}})();
+    </script>
     <!-- ionic/angularjs js -->
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/underscore/underscore-min.js"></script>
@@ -23,8 +28,10 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="js/directives/touchStyle.js"></script>
     <script src="states/main.js"></script>
     <script src="states/init/init-favorite.js"></script>
+    <script src="states/club/club-details.js"></script>
     <script src="states/findFit/findFit-map.js"></script>
     <script src="states/fitMate/fitMate.js"></script>
     <script src="states/fitMate/fitMate-list.js"></script>

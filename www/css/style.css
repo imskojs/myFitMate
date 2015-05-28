@@ -7,6 +7,13 @@ h1, h2, h3, h4, h5, h6, p {
 .icon {
   color: white;
 }
+.button-reset {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 .button.button-positive {
   padding:0;
   min-width:0;
@@ -22,6 +29,9 @@ h1, h2, h3, h4, h5, h6, p {
   letter-spacing: -1px;
 }
 
+.touched {
+  opacity: 0.5 !important;
+}
 
 /**************************************/
 /***************HEADER*****************/
@@ -665,11 +675,87 @@ ion-content.has-subheader {
 .modal {
   background: transparent;
 }
-
 .modal .scroll-content {
   background: rgba(0, 0, 0, 0.5);
   top: 26vw;
 }
+.modal .info-container {
+  margin-top: 10vh;
+}
+.modal .row.title-bar {
+  z-index: 1;
+}
+.modal .pinky {
+  background: #f14182;
+  text-align: center;
+  height: 10vw;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px black;
+}
+.modal .x {
+  top: 2.5vw; right:2vw;
+  background: url('../img/04_map/1080x1920/icon_close.png') no-repeat;
+  background-size: cover;
+  width: 4.5vw;
+  height: 4.5vw;
+}
+.modal h2 {
+  color: white;
+  line-height: 10vw;
+  font-size: 4.6vw;
+}
+
+.modal .img-container img{
+  width: 100%;
+  height: 73.8vw;
+  display: block;
+}
+.modal .address-container {
+  bottom: 0;
+  height: 8vw;
+  line-height: 8vw;
+  width: 100%;
+  background: rgba(155, 155, 155, .5);
+  text-align: right;
+  padding-right: 4.8vw;
+  font-size: 2.6vw;
+}
+.modal .loc-icon {
+  background: url('../img/04_map/1080x1920/icon_popup_position.png') no-repeat;
+  background-size: cover;
+  width: 2.6vw;
+  height: 3.4vw;
+  top: 2.2vw; 
+  left: 34.8vw;
+}
+
+.modal .details-container {
+  background: #434252;
+  height: 14vw;
+}
+.modal .details-container h2 {
+  height: 14vw;
+  line-height: 14vw;
+  margin-left: 5vw;
+}
+.modal .details-container .info-details-icon {
+  background: url('../img/04_map/1080x1920/icon_popup_go_to_detail.png') no-repeat;
+  background-size: contain;
+  width: 7vw;
+  height: 5.4vw;
+  top: 2.8vw;
+  right: 4vw;
+}
+.modal .details-container .text {
+  color: white;
+  font-size: 2vw;
+  top: 8.5vw;
+  right: 4vw;
+}
+
+/*************************************************/
+/*****************  findFit  *********************/
+
 /*************************************************/
 /*************** fitMate ABSTRACT STATE***********/
 #fitMate .category-ul {
@@ -795,6 +881,10 @@ ion-content.has-subheader {
   height: 67.5vw;
   background: grey;
 }
+#club-details .box img {
+  width: 100%;
+  height: 100%;
+}
 #club-details .active .icon.ion-record {
   color: #e84982;
 }
@@ -859,6 +949,10 @@ ion-content.has-subheader {
   margin-top: 3.2vw;
   font-size: 3.6vw;
   line-height: 120%;
+}
+
+#club-details .daum-map-container {
+  height: 67.5vw;
 }
 #club .bar.bar-subheader h2{
   color: #73cfda;

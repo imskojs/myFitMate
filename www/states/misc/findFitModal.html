@@ -1,7 +1,47 @@
 
   <div class="modal">
     <ion-content>
-      THIS IS A MODAL.
+    <div class="row">
+      <div class="col"></div>
+      <div class="col col-77">
+        
+        <div class="info-container">
+          
+          <div class="row relative title-bar">
+            <div class="col pinky">
+              <h2>{{ selectedFit.title }}</h2>
+            </div>
+            <button class="button-reset absolute x" ng-click="modal.hide()">
+
+            </button>
+          </div>
+
+          <div class="row img-container relative">
+            <div class="col">
+              <img ng-src="{{selectedFit.images[0]}}" alt="place" ng-click="goToDetailsWithParam()">
+              <div class="address-container absolute">
+                 <span class="loc-icon absolute"></span>{{ selectedFit.address }}
+              </div>
+            </div>
+          </div>
+
+          <div class="row relative details-container">
+            <div class="col col-70">
+              <h2>{{ selectedFit.title }}</h2>
+            </div>
+            <button class="info-details-icon absolute button-reset"
+            ng-click="goToDetailsWithParam()"
+            >
+            </button>
+            <span class="absolute text">상세보기</span>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col"></div>
+    </div>
+
 
     </ion-content>
   </div>
