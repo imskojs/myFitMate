@@ -1,4 +1,4 @@
-<ion-view view-title="{Name of the club}" id="club-details">
+<ion-view view-title="{{currentContent.title}}" id="club-details">
   <ion-content>
     <ion-slide-box on-slide-changed="slideHasChanged($index)">
       <ion-slide>
@@ -19,7 +19,7 @@
 
         <div class="row contact">
           <div class="col" ng-href="tel:{{ currentContent.tel }}"><h3><i class="phone absolute"></i>전화하기</h3></div>
-          <div class="col right" ng-click="contactBack();"><h3><i class="note absolute"></i>연락받기</h3></div>
+          <div class="col right" ng-click="write();"><h3><i class="note absolute"></i>연락받기</h3></div>
         </div>
 
         <div class="row border-bottom main-category">
@@ -33,13 +33,10 @@
         <h4>소개</h4>
         <p class="border-bottom">{{ currentContent.about }}</p>
         <h4>주소 / 찾아가는 길</h4>
-        <p class="border-bottom">{{ currentContent.address }}</p>
+        <p>{{ currentContent.address }}</p>
+
         <div class="daum-map-container">
-          
         </div>
-        
-
-
 
       </div>
       <div class="col"></div>

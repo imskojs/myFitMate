@@ -951,9 +951,13 @@ ion-content.has-subheader {
   line-height: 120%;
 }
 
+/*daum map*/
 #club-details .daum-map-container {
   height: 67.5vw;
+  margin-top: 1.5vh;
+  margin-bottom: 6vh;
 }
+
 #club .bar.bar-subheader h2{
   color: #73cfda;
 }

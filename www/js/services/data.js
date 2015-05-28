@@ -27,6 +27,7 @@ angular.module('myFitMate')
             title: '다음 커뮤니케이션', 
             images: ['img/05_detail_page/board_img.png','img/05_detail_page/board_img.png','img/05_detail_page/board_img.png'],
             tel: 0705078989,
+            email: 'wang@health.com',
             major: '헬스 / 트레이닝',
             address: '강남구 봉봉동 붕붕빵',
             latlng: [33.450705, 126.570677],
@@ -35,25 +36,43 @@ angular.module('myFitMate')
               '무료로 제공한다. 프로그램으로는 퍼스널 트레이널 트레이닝, 헬스, 에어로빅을 운영하고있다.'
           },
           {
-            title: '생태연못', 
-            latlng: [33.450936, 126.569477],
-            address: '강서구 뽕뽕뽕 뿡뿡뿡',
-            image: 'img/05_detail_page/board_img.png',
-            major: '헬스 / 트레이닝'
+            id: 102,
+            title: '봉봉', 
+            images: ['img/05_detail_page/board_img.png','img/05_detail_page/board_img.png','img/05_detail_page/board_img.png'],
+            tel: 0705078989,
+            email: 'asdf@asdf.com',
+            major: '헬스 / 트레이닝',
+            address: '강남구 봉봉동 붕붕빵',
+            latlng: [34.462705, 126.572677],
+            about: '강남구 강남대로 354 혜천빌딩 지하 1층에 위치하며, 최근 리모델링을 해서 시설이 '  +
+              '깨끗하고 좋다. 트레이너들은 기종의 트레이너들이 계속 운영하고 있으며, 샤워실, 운동복, 수건등을 ' +
+              '무료로 제공한다. 프로그램으로는 퍼스널 트레이널 트레이닝, 헬스, 에어로빅을 운영하고있다.'
           },
           {
-            title: '텃밭', 
-            latlng: [33.450879, 126.569940],
-            address: '강동구 붕붕붕 봉붕보우',
-            image: 'img/05_detail_page/board_img.png',
-            major: '헬스 / 트레이닝'
+            id: 103,
+            title: '돌돌', 
+            images: ['img/05_detail_page/board_img.png','img/05_detail_page/board_img.png','img/05_detail_page/board_img.png'],
+            tel: 0705078989,
+            email: '123kakak@kakak.com',
+            major: '헬스 / 트레이닝',
+            address: '강남구 봉봉동 붕붕빵',
+            latlng: [33.444705, 126.574677],
+            about: '강남구 강남대로 354 혜천빌딩 지하 1층에 위치하며, 최근 리모델링을 해서 시설이 '  +
+              '깨끗하고 좋다. 트레이너들은 기종의 트레이너들이 계속 운영하고 있으며, 샤워실, 운동복, 수건등을 ' +
+              '무료로 제공한다. 프로그램으로는 퍼스널 트레이널 트레이닝, 헬스, 에어로빅을 운영하고있다.'
           },
           {
-            title: '근린공원',
-            latlng: [33.451393, 126.570738],
-            address: '강북구 바바바 보보보',
-            image: 'img/05_detail_page/board_img.png',
-            major: '헬스 / 트레이닝'
+            id: 104,
+            title: '왕왕', 
+            images: ['img/05_detail_page/board_img.png','img/05_detail_page/board_img.png','img/05_detail_page/board_img.png'],
+            tel: 0705078989,
+            email: 'vvvkkkooo@kokoko.com',
+            major: '헬스 / 트레이닝',
+            address: '강남구 봉봉동 붕붕빵',
+            latlng: [33.446705, 126.576677],
+            about: '강남구 강남대로 354 혜천빌딩 지하 1층에 위치하며, 최근 리모델링을 해서 시설이 '  +
+              '깨끗하고 좋다. 트레이너들은 기종의 트레이너들이 계속 운영하고 있으며, 샤워실, 운동복, 수건등을 ' +
+              '무료로 제공한다. 프로그램으로는 퍼스널 트레이널 트레이닝, 헬스, 에어로빅을 운영하고있다.'
           }
         ]
       }
