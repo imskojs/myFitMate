@@ -4,7 +4,13 @@
     <div class="row">
       <div class="col"></div>
       <div class="col col-62 search">
-        <i class="search-icon absolute"></i> <input type="search" class="absolute sub-header-search" placeholder="찾으실 지역을 검색하세요">
+        <i class="search-icon absolute"></i> 
+        <input class="absolute sub-header-search"
+          type="search"
+          placeholder="찾으실 지역을 검색하세요"
+          ng-model="search.place"
+          ng-model-options="{ updateOn: 'blur' }"
+        >
       </div>
       <div class="col"></div>
     </div>
