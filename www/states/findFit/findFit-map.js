@@ -3,6 +3,19 @@ angular.module('myFitMate')
 $scope, Data, Utility, $timeout, $ionicModal, $state, $ionicNavBarDelegate
 ){ 
 var $ = Utility;
+// current location.
+$scope.findMe = function (){
+  navigator.geolocation.getCurrentPosition(function (position){
+    console.log(position)
+    Data.findFit.currentLocation.latitude = position.coords.latitude;
+    Data.findFit.currentLocation.longitude = position.coords.longitude;
+    map.setCenter( new daum.maps.LatLng(
+      Data.findFit.currentLocation.latitude, 
+      Data.findFit.currentLocation.longitude
+    ));
+  });
+};
+
 var DOM = angular.element('#findFit-map .daum-map-container')[0]
 var mapOptions = {
   center: new daum.maps.LatLng(37.5691469, 126.978647),

@@ -20,6 +20,7 @@ angular.module('myFitMate')
       } 
     },
     findFit: {
+      currentLocation: {},
       map: {
         locations: [
           {
