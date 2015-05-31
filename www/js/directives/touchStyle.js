@@ -32,7 +32,6 @@ angular.module('myFitMate')
             } catch (err){
               console.log(err);
             }
-            elem.text('');
           })
         }
       })

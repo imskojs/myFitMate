@@ -22,7 +22,7 @@
         <h2>{{ currentContent.title }}</h2>
 
         <div class="row contact">
-          <div class="col" ng-href="tel:{{ currentContent.phone }}"><h3><i class="phone absolute"></i>전화하기</h3></div>
+          <div class="col" ng-click="call(currentContent.phone)"><h3><i class="phone absolute"></i>전화하기</h3></div>
           <div class="col right" ng-click="write();"><h3><i class="note absolute"></i>연락받기</h3></div>
         </div>
 

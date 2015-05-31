@@ -24,6 +24,9 @@ $scope.$on('$ionicView.enter', function(){
 $scope.write = function (){
   $.goTo('club.write', {writeId: index})
 };
+$scope.call = function (tel){
+  window.location.href = 'tel:' + tel
+}
 //// END
 });
 });

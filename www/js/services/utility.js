@@ -57,10 +57,10 @@ var getStateParam = function (paramName){
 
 var calcNearBy = function (lat, lng) {
   var category = Data.init.favorite.selectedOption.data;
-  var minLat = lat - .3;
-  var maxLat = lat + .3;
-  var minLng = lng - .5;
-  var maxLng = lng + .5;
+  var minLat = lat - .5;
+  var maxLat = lat + .5;
+  var minLng = lng - .9;
+  var maxLng = lng + .9;
   var params = {
     category: category,
     minLat: minLat,
@@ -223,6 +223,7 @@ return {
   warningMessage: warningMessage,
   getStateParam: getStateParam,
   calcNearBy: calcNearBy,
+  searchHandler: searchHandler,
 
 
   subHeaderMenuScroller: subHeaderMenuScroller
@@ -240,17 +241,22 @@ function queryStringify(queryObj){
 
 
 
-function searchHandler(map, response){
+function searchHandler(map, response, $scope){
   var markers = Data.findFit.map.markers; 
   var locs = Data.findFit.map.locations;
+  console.log(locs)
   angular.forEach(markers, function (marker, i, self){
     marker.setMap(null);
     delete self[i]
   });
   angular.forEach(locs, function(club, i, self){
-    delete self[i];
+    self.shift();
   });
-  angular.extend(locs, response.clubs);
+  console.log(locs)
+  angular.forEach(response.clubs, function(club, i, self){
+    locs.push(club);
+  });
+  console.log(locs);
   var windowWidth = Data.windowWidth;
   var markerWidth = windowWidth * .111;
   var markerHeight = windowWidth * .055;
