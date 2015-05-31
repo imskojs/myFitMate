@@ -936,6 +936,11 @@ ion-content.has-subheader {
   height: 7vw;
   line-height: 7vw;
 }
+#club-details .main-category h3 {
+  height: 7vw;
+  line-height: 7vw;
+  margin-top: 10px;
+}
 
 #club-details .main-category select {
   width: 100%;

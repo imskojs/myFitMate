@@ -4,7 +4,7 @@ angular.module('myFitMate')
   $timeout 
 ){
 
-var serverUrl = "http://192.168.0.65:1337";
+var serverUrl = "http://localhost:1337";
 
   //Sub header menu scroller
 var subHeaderMenuScroller = function(arrayData, handle ,$index, $event, centerAtIndex){
@@ -182,11 +182,18 @@ var Post = {
 var Comment = {
   create: create.bind(null, '/comment'),
   destroy: destroy.bind(null, '/comment')
+};
+
+var Club = {
+  find: find.bind(null, '/club/nearBy'),
+  create: create.bind(null, '/club'),
+  destroy: destroy.bind(null, '/club')
 }
 
 return {
   Post: Post,
   Comment: Comment,
+  Club: Club,
   // General //
   goTo: goTo,
   loadingOff: loadingOff,

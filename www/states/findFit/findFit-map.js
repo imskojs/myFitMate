@@ -1,122 +1,101 @@
 angular.module('myFitMate')
 .controller('findFit.map', function (
-$scope, Data, Utility, $timeout, $ionicModal, $state
-){ $scope.$on('$ionicView.enter', function(){
+$scope, Data, Utility, $timeout, $ionicModal, $state, $ionicNavBarDelegate
+){ 
 var $ = Utility;
+var DOM = angular.element('#findFit-map .daum-map-container')[0]
+var mapOptions = {
+  center: new daum.maps.LatLng(37.5691469, 126.978647),
+  level: 5,
+  draggable: true
+}
+var index;
+var map;
+var ps = new daum.maps.services.Places();
+map = new daum.maps.Map(DOM, mapOptions)
 
-
+$scope.$on('$ionicView.enter', function(){
 var windowWidth = angular.element('body').width();
 // Marker style.
 var markerWidth = windowWidth * .111;
 var markerHeight = windowWidth * .055;
 var markerSrc = 'img/04_map/1080x1920/icon_map_unselect.png';
+var markerClickedSrc = 'img/04_map/1080x1920/icon_map_select.png';
 var markerSize = new daum.maps.Size(markerWidth, markerHeight);
 var markerImg = new daum.maps.MarkerImage(markerSrc, markerSize);
+var markerClickedImg = new daum.maps.MarkerImage(markerClickedSrc, markerSize);
 // Map options;
-var DOM = angular.element('#findFit-map .daum-map-container')[0]
-var mapOptions = {
-  center: new daum.maps.LatLng(33.460701, 126.580667),
-  level: 5,
-  draggable: true
-}
 // Map, markers, and listeners.
-var index;
-var map;
-var ps = new daum.maps.services.Places();
-$scope.$apply(function(){
-  //TODO: Request locations data
-  var locs = Data.findFit.map.locations;
-  map = new daum.maps.Map(DOM, mapOptions)
-  locs.forEach(function(value, i, self){
-    var position =  new daum.maps.LatLng(locs[i].latitude, locs[i].longitude)
-    var marker = new daum.maps.Marker({
-      map: map,
-      position: position,
-      title: String(i),
-      image: markerImg,
-      clickable: true,
-    });
-    daum.maps.event.addListener(marker, 'click', function() {
-      var marker = this;
-      $scope.$apply(function (){
-        $scope.modal.show();
-        index = Number(marker.getTitle());
-        $scope.selectedFit = Data.findFit.map.locations[index];
-      })
-    });
-  })
-});
-
+// markers data
+var markers = [];
 // Search
 $scope.$watch('search.place', function (value, prev){
   if(value !== prev){
     ps.keywordSearch(value, function(status, data, pagination){
-      var array = data.places
-     // firstMatch
-// {
-//   "phone": "054-1600-7788",
-//   "newAddress": "",
-//   "imageUrl": "",
-//   "direction": "",
-//   "zipcode": "",
-//   "placeUrl": "http://place.map.daum.net/26796698",
-//   "id": "26796698",
-//   "title": "백두대간협곡열차 V-train",
-//   "category": "교통,수송 > 기차,철도",
-//   "distance": "",
-//   "address": "경북 봉화군 소천면 분천리 964",
-//   "longitude": "129.0581560401413",
-//   "latitude": "36.932994724777515",
-//   "addressBCode": "4792035027"
-// } 
-      var firstMatch = array[0];
-      var lat = firstMatch.latitude;
-      var lng = firstMatch.longitude;
+      // Look at the first result of the search and center the map there
+      var daumResultArray = data.places
+      var firstMatch = daumResultArray[0];
+      var lat = Number(firstMatch.latitude);
+      var lng = Number(firstMatch.longitude);
       var location = new daum.maps.LatLng( lat, lng );
       map.panTo(location);
-
-      // request data with latitude +- .3,  longitude +- .6
+      console.log(location)
+      // request club data with latitude +- .3,  longitude +- .5
+      var category = Data.init.favorite.selectedOption.data;
       var minLat = lat - .3;
       var maxLat = lat + .3;
-      var minLng = lng - .6;
-      var maxLng = lng + .6;
-
-      var reqQueryData ={
-        category: Data.init.favorite.selectedOption,
-        latitude: {
-          '>': minLat,
-          '<': maxLat,
-        },
-        longitude: {
-          '>': minLng,
-          '<': maxLng
-        }
-      }
-
-      // on response;
-      // Draw pins.
-      // Delete markers;
-      Data.findFit.map.locations = response.locations;
-      var locs = Data.findFit.map.locations;
-      locs.forEach(function(value, i, self){
-        var position =  new daum.maps.LatLng(locs[i].latitude, locs[i].longitude)
-        var marker = new daum.maps.Marker({
-          map: map,
-          position: position,
-          title: String(i),
-          image: markerImg,
-          clickable: true,
+      var minLng = lng - .5;
+      var maxLng = lng + .5;
+      var params = {
+        category: category,
+        minLat: minLat,
+        maxLat: maxLat,
+        minLng: minLng, 
+        maxLng: maxLng
+      };
+      $.Club.find(params)
+      .then(function (response){
+        // Delete current markers on map, and current clubs data.
+        angular.forEach(markers, function (marker, i, self){
+          marker.setMap(null);
+          delete self[i]
         });
-        daum.maps.event.addListener(marker, 'click', function() {
-          var marker = this;
-          $scope.$apply(function (){
-            $scope.modal.show();
-            index = Number(marker.getTitle());
-            $scope.selectedFit = Data.findFit.map.locations[index];
-          })
+        angular.forEach(Data.findFit.map.locations, function(club, i, self){
+          delete self[i];
         });
+        // Save nearby club data.
+        angular.extend(Data.findFit.map.locations, response.clubs);
+        var locs = Data.findFit.map.locations;
+        // Draw newly got markers.
+        angular.forEach(locs, function(club, i, self){
+          var position =  new daum.maps.LatLng(club.latitude, club.longitude);
+          var marker = new daum.maps.Marker({
+            map: map,
+            position: position,
+            title: String(i),
+            image: markerImg,
+            clickable: true,
+          });
+          daum.maps.event.addListener(marker, 'click', function() {
+            var marker = this;
+            $scope.$apply(function (){
+              // change marker image to selected.
+              angular.forEach(markers, function (marker, i, self){
+                marker.setImage(markerImg);
+              });
+              marker.setImage(markerClickedImg);
+              $scope.modal.show();
+              index = Number(marker.getTitle());
+              $scope.selectedFit = Data.findFit.map.locations[index];
+              Data.findFit.map.selectedClub = Data.findFit.map.locations[index];
+              console.log(Data.findFit.map.locations[index]);
+            })
+          });
+          markers.push(marker);
+        })
+      }, function (err){
+        console.log('존재하지 않는 장소입니다')
       })
-
     });
   }
 })
