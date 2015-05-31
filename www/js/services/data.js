@@ -1,7 +1,7 @@
 angular.module('myFitMate')
 .factory('Data', function (){
   return {
-    
+    windowWidth: null,
     init: {
       login: {
         userId: 0,
@@ -22,6 +22,7 @@ angular.module('myFitMate')
     findFit: {
       currentLocation: {},
       map: {
+        markers:[],
         locations: [
           {
             id: 101,

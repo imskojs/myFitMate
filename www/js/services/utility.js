@@ -55,6 +55,22 @@ var getStateParam = function (paramName){
   return $stateParams[paramName]
 }
 
+var calcNearBy = function (lat, lng) {
+  var category = Data.init.favorite.selectedOption.data;
+  var minLat = lat - .3;
+  var maxLat = lat + .3;
+  var minLng = lng - .5;
+  var maxLng = lng + .5;
+  var params = {
+    category: category,
+    minLat: minLat,
+    maxLat: maxLat,
+    minLng: minLng, 
+    maxLng: maxLng
+  };
+  return params;
+}
+
 //////////////////////////////////////////////////////////////////
 //////////////////// Communication to server /////////////////////
 //////////////////////////////////////////////////////////////////
@@ -190,6 +206,11 @@ var Club = {
   destroy: destroy.bind(null, '/club')
 }
 
+/**********************************************
+* returning object
+*
+*
+**********************************************/
 return {
   Post: Post,
   Comment: Comment,
@@ -201,6 +222,7 @@ return {
   errorMessage: errorMessage,
   warningMessage: warningMessage,
   getStateParam: getStateParam,
+  calcNearBy: calcNearBy,
 
 
   subHeaderMenuScroller: subHeaderMenuScroller
@@ -218,7 +240,54 @@ function queryStringify(queryObj){
 
 
 
-
+function searchHandler(map, response){
+  var markers = Data.findFit.map.markers; 
+  var locs = Data.findFit.map.locations;
+  angular.forEach(markers, function (marker, i, self){
+    marker.setMap(null);
+    delete self[i]
+  });
+  angular.forEach(locs, function(club, i, self){
+    delete self[i];
+  });
+  angular.extend(locs, response.clubs);
+  var windowWidth = Data.windowWidth;
+  var markerWidth = windowWidth * .111;
+  var markerHeight = windowWidth * .055;
+  var markerSrc = 'img/04_map/1080x1920/icon_map_unselect.png';
+  var markerClickedSrc = 'img/04_map/1080x1920/icon_map_select.png';
+  var markerSize = new daum.maps.Size(markerWidth, markerHeight);
+  var markerImg = new daum.maps.MarkerImage(markerSrc, markerSize);
+  var markerClickedImg = new daum.maps.MarkerImage(markerClickedSrc, markerSize);
+  angular.forEach(locs, function(club, i, self){
+    var position =  new daum.maps.LatLng(club.latitude, club.longitude);
+    var marker = new daum.maps.Marker({
+      map: map,
+      position: position,
+      title: String(i),
+      image: markerImg,
+      clickable: true,
+    });
+    daum.maps.event.addListener(marker, 'click', function() {
+      var marker = this;
+      $scope.$apply(function (){
+        // change this image to selected. Rest unselected img
+        angular.forEach(markers, function (marker, i, self){
+          marker.setImage(markerImg);
+        });
+        marker.setImage(markerClickedImg);
+        // load content based on location of the array
+        $scope.modal.show();
+        index = Number(marker.getTitle());
+        $scope.selectedFit = Data.findFit.map.locations[index];
+        Data.findFit.map.selectedClub = Data.findFit.map.locations[index];
+      })
+    });
+    // Save markers for deleting in the future.
+    markers.push(marker);
+  })
+}
+        // Draw newly received markers.
 
 
 

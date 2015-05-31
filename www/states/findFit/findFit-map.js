@@ -3,16 +3,30 @@ angular.module('myFitMate')
 $scope, Data, Utility, $timeout, $ionicModal, $state, $ionicNavBarDelegate
 ){ 
 var $ = Utility;
+var windowWidth = angular.element('body').width();
+Data.windowWidth = windowWidth
+// Marker style.
+var markerWidth = windowWidth * .111;
+var markerHeight = windowWidth * .055;
+var markerSrc = 'img/04_map/1080x1920/icon_map_unselect.png';
+var markerClickedSrc = 'img/04_map/1080x1920/icon_map_select.png';
+var markerSize = new daum.maps.Size(markerWidth, markerHeight);
+var markerImg = new daum.maps.MarkerImage(markerSrc, markerSize);
+var markerClickedImg = new daum.maps.MarkerImage(markerClickedSrc, markerSize);
+
 // current location.
 $scope.findMe = function (){
   navigator.geolocation.getCurrentPosition(function (position){
-    console.log(position)
-    Data.findFit.currentLocation.latitude = position.coords.latitude;
-    Data.findFit.currentLocation.longitude = position.coords.longitude;
-    map.setCenter( new daum.maps.LatLng(
-      Data.findFit.currentLocation.latitude, 
-      Data.findFit.currentLocation.longitude
-    ));
+    console.log(position.coords);
+    var lat = Data.findFit.currentLocation.latitude = position.coords.latitude;
+    var lng = Data.findFit.currentLocation.longitude = position.coords.longitude;
+    map.setCenter( new daum.maps.LatLng(lat, lng) );
+    var params = $.calcNearBy(lat, lng);
+
+
+
+
+
   });
 };
 
@@ -28,20 +42,8 @@ var ps = new daum.maps.services.Places();
 map = new daum.maps.Map(DOM, mapOptions)
 
 $scope.$on('$ionicView.enter', function(){
-var windowWidth = angular.element('body').width();
-// Marker style.
-var markerWidth = windowWidth * .111;
-var markerHeight = windowWidth * .055;
-var markerSrc = 'img/04_map/1080x1920/icon_map_unselect.png';
-var markerClickedSrc = 'img/04_map/1080x1920/icon_map_select.png';
-var markerSize = new daum.maps.Size(markerWidth, markerHeight);
-var markerImg = new daum.maps.MarkerImage(markerSrc, markerSize);
-var markerClickedImg = new daum.maps.MarkerImage(markerClickedSrc, markerSize);
-// Map options;
-// Map, markers, and listeners.
-// markers data
-var markers = [];
-// Search
+// BEG
+// var markers = [];
 $scope.$watch('search.place', function (value, prev){
   if(value !== prev){
     ps.keywordSearch(value, function(status, data, pagination){
@@ -52,20 +54,9 @@ $scope.$watch('search.place', function (value, prev){
       var lng = Number(firstMatch.longitude);
       var location = new daum.maps.LatLng( lat, lng );
       map.panTo(location);
-      console.log(location)
       // request club data with latitude +- .3,  longitude +- .5
-      var category = Data.init.favorite.selectedOption.data;
-      var minLat = lat - .3;
-      var maxLat = lat + .3;
-      var minLng = lng - .5;
-      var maxLng = lng + .5;
-      var params = {
-        category: category,
-        minLat: minLat,
-        maxLat: maxLat,
-        minLng: minLng, 
-        maxLng: maxLng
-      };
+      var params = $.calcNearBy(lat, lng);
+
       $.Club.find(params)
       .then(function (response){
         // Delete current markers on map, and current clubs data.

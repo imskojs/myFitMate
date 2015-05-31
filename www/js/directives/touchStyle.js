@@ -26,6 +26,13 @@ angular.module('myFitMate')
         if(e.keyCode === 13){
           scope.$apply(function (){
             ngModelCtrl.$commitViewValue();
+            elem[0].blur();
+            try{
+              cordova.plugins.Keyboard.close();
+            } catch (err){
+              console.log(err);
+            }
+            elem.text('');
           })
         }
       })
