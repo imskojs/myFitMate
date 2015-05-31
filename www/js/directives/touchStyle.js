@@ -17,4 +17,39 @@ angular.module('myFitMate')
       });
     }
   }
-});
+})
+.directive('enter', function (){
+  return {
+    require: 'ngModel',
+    link: function (scope, elem, attrs, ngModelCtrl){
+      elem.bind('keyup', function (e){
+        if(e.keyCode === 13){
+          scope.$apply(function (){
+            ngModelCtrl.$commitViewValue();
+          })
+        }
+      })
+    }
+  }
+})
+.directive('daum', function (Data, Utility, $timeout){
+  var $ = Utility;
+  return{
+    link: function (scope, elem, attrs){
+      var locs = Data.findFit.map.locations;
+      var index = $.getStateParam('clubId');
+      console.log(locs[index])
+      var center0 = locs[index].latitude;
+      var center1 = locs[index].longitude;
+      var DOM = elem[0];
+      var mapOptions = {
+        center: new daum.maps.LatLng(center0, center1),
+        level: 5,
+        marker: {
+          position: new daum.maps.LatLng(center0, center1)
+        }
+      };
+      new daum.maps.StaticMap(DOM, mapOptions);
+    }
+  };
+})

@@ -66,7 +66,7 @@ $scope.$watch('search.place', function (value, prev){
         // Save nearby club data.
         angular.extend(Data.findFit.map.locations, response.clubs);
         var locs = Data.findFit.map.locations;
-        // Draw newly got markers.
+        // Draw newly received markers.
         angular.forEach(locs, function(club, i, self){
           var position =  new daum.maps.LatLng(club.latitude, club.longitude);
           var marker = new daum.maps.Marker({
@@ -79,18 +79,19 @@ $scope.$watch('search.place', function (value, prev){
           daum.maps.event.addListener(marker, 'click', function() {
             var marker = this;
             $scope.$apply(function (){
-              // change marker image to selected.
+              // change this image to selected. Rest unselected img
               angular.forEach(markers, function (marker, i, self){
                 marker.setImage(markerImg);
               });
               marker.setImage(markerClickedImg);
+              // load content based on location of the array
               $scope.modal.show();
               index = Number(marker.getTitle());
               $scope.selectedFit = Data.findFit.map.locations[index];
               Data.findFit.map.selectedClub = Data.findFit.map.locations[index];
-              console.log(Data.findFit.map.locations[index]);
             })
           });
+          // Save markers for deleting in the future.
           markers.push(marker);
         })
       }, function (err){

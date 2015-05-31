@@ -74,6 +74,7 @@ angular.module('myFitMate', ['ionic'])
     templateUrl: "states/club/club.html"
   })
   .state('club.details', {
+    cache: false,
     url: '/details/:clubId',
     templateUrl: "states/club/club-details.html",
     controller: 'club.details'
