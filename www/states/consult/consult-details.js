@@ -79,8 +79,20 @@ $scope.destroyComment = function (commentObj){
 $scope.goBack = function (){
   $.goTo('consult.list');
 };
+// .detail-content-bottom .arrow {
+//   background: url('../img/06_board/fitmate/1080x1920/btn_comment_up.png') no-repeat;
+//   background-size: contain;
+//   width: 3.5vw;
+//   margin-top: 1.5vw;
+//   margin-right: 1%;
+// }
 
-
+$scope.arrowToggle =false 
+$scope.collapsed = false;
+$scope.collapse = function (){
+  $scope.arrowToggle = !$scope.arrowToggle;
+  $scope.collapsed = !$scope.collapsed;
+}
 
 // END 
 });

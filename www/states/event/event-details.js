@@ -80,6 +80,12 @@ $scope.goBack = function (){
   $.goTo('event.list');
 };
 
+$scope.arrowToggle =false 
+$scope.collapsed = false;
+$scope.collapse = function (){
+  $scope.arrowToggle = !$scope.arrowToggle;
+  $scope.collapsed = !$scope.collapsed;
+}
 
 
 // END 

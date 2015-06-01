@@ -33,9 +33,9 @@
           <div class="select-wrapper relative">
             <div class="select-arrow absolute"> <i></i> </div>
           </div>
-          <select ng-options="option as option.type for option in options" ng-model="selectedOption" class="category relative">
+          <select touched ng-options="option as option.type for option in options" ng-model="selectedOption" class="category relative">
           </select>
-          <h4 class="set" ui-sref="main" ng-click="save(selectedOption);"><span>설정하기</span></h4>
+          <h4 class="set" ui-sref="main" ng-click="save(selectedOption);"><span touched>설정하기</span></h4>
         </div>
         <div class="col"></div>
       </div>

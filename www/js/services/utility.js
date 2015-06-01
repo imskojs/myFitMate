@@ -70,6 +70,31 @@ var calcNearBy = function (lat, lng) {
   };
   return params;
 }
+var empty = function (obj){
+  if(Array.isArray(obj)){
+    var length = obj.length;
+    obj.forEach(function(value, i, self){
+      obj.splice(length - 1 - i, 1);
+    })
+  } else {
+    for(var key in obj){
+      if(obj.hasOwnProperty(key)){
+        delete obj[key];
+      }
+    }
+  }
+};
+var extend = function (dst, src){
+  var same = Array.isArray(dst) === Array.isArray(src)
+  if(Array.isArray(dst) && same){
+    var length = obj.length;
+    src.forEach(function(value, i, self){
+      dst[i] = value;
+    })
+  } else {
+    angular.extend(dst, src);
+  }
+};
 
 //////////////////////////////////////////////////////////////////
 //////////////////// Communication to server /////////////////////
@@ -224,6 +249,8 @@ return {
   getStateParam: getStateParam,
   calcNearBy: calcNearBy,
   searchHandler: searchHandler,
+  empty: empty,
+  extend: extend,
 
 
   subHeaderMenuScroller: subHeaderMenuScroller
@@ -238,7 +265,6 @@ function queryStringify(queryObj){
   var queryString = paramsArray.join('/');
   return queryString;
 }
-
 
 
 function searchHandler(map, response, $scope){

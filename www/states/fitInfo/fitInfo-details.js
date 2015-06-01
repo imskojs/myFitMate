@@ -83,7 +83,12 @@ $scope.goBack = function (){
     Data.fitInfo.firstVisit = false;
   }, 0);
 };
-
+$scope.arrowToggle =false 
+$scope.collapsed = false;
+$scope.collapse = function (){
+  $scope.arrowToggle = !$scope.arrowToggle;
+  $scope.collapsed = !$scope.collapsed;
+}
 
 
 // END 

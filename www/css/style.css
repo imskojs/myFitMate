@@ -31,6 +31,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .touched {
   opacity: 0.5 !important;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /**************************************/
@@ -340,7 +341,20 @@ ion-content.has-subheader {
   vertical-align: top;
 }
 .detail-content-bottom .arrow {
+  background-size: contain;
+  width: 3.5vw;
+  margin-top: 1.5vw;
+  margin-right: 1%;
+}
+.detail-content-bottom .arrow.arrowUp {
   background: url('../img/06_board/fitmate/1080x1920/btn_comment_up.png') no-repeat;
+  background-size: contain;
+  width: 3.5vw;
+  margin-top: 1.5vw;
+  margin-right: 1%;
+}
+.detail-content-bottom .arrow.arrowDown {
+  background: url('../img/06_board/fitmate/1080x1920/btn_comment_open.png') no-repeat;
   background-size: contain;
   width: 3.5vw;
   margin-top: 1.5vw;

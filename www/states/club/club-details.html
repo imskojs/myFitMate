@@ -22,8 +22,8 @@
         <h2>{{ currentContent.title }}</h2>
 
         <div class="row contact">
-          <div class="col" ng-click="call(currentContent.phone)"><h3><i class="phone absolute"></i>전화하기</h3></div>
-          <div class="col right" ng-click="write();"><h3><i class="note absolute"></i>연락받기</h3></div>
+          <div class="col" ng-click="call(currentContent.phone)" touched><h3><i class="phone absolute"></i>전화하기</h3></div>
+          <div class="col right" ng-click="write();" touched><h3><i class="note absolute"></i>연락받기</h3></div>
         </div>
 
         <div class="row border-bottom main-category">
@@ -39,7 +39,7 @@
         <h4>주소 / 찾아가는 길</h4>
         <p>{{ currentContent.address }}</p>
 
-        <div class="daum-map-container" daum>
+        <div class="daum-map-container" daum touched>
         </div>
 
       </div>

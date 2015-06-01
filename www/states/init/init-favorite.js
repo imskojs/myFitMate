@@ -1,14 +1,16 @@
 angular.module('myFitMate')
-.controller('init.favorite', function ($scope, Data){
+.controller('init.favorite', function ($scope, Data, Utility){
 
+  var $ = Utility
   $scope.options = Data.init.favorite.options;
 
   $scope.selectedOption = $scope.options[0];
 
   $scope.save = function (option){
-    Data.init.favorite.selectedOption = option; //{id: number, type:string}
-    console.log(Data.init.favorite.selectedOption.id);
-    console.log(Data.init.favorite.selectedOption.type);
+    $.empty(Data.init.favorite.selectedOption);
+    console.log(Data.init.favorite.selectedOption)
+    $.extend(Data.init.favorite.selectedOption, option)
+    console.log(Data.init.favorite.selectedOption)
   }
 
 });

@@ -14,7 +14,9 @@ var markerClickedSrc = 'img/04_map/1080x1920/icon_map_select.png';
 var markerSize = new daum.maps.Size(markerWidth, markerHeight);
 var markerImg = new daum.maps.MarkerImage(markerSrc, markerSize);
 var markerClickedImg = new daum.maps.MarkerImage(markerClickedSrc, markerSize);
+var search = true;
 $scope.findMe = function (){
+  search = false
   navigator.geolocation.getCurrentPosition(function (position){
     console.log(position.coords);
     var lat = Data.findFit.currentLocation.latitude = position.coords.latitude;
