@@ -1,0 +1,48 @@
+<ion-view view-title="이벤트" id="event-list" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-android-arrow-back" ui-sref="main" nav-direction="back"></button>
+  </ion-nav-buttons>
+
+  <ion-pane class="pinky">
+
+  </ion-pane>
+  <ion-content>
+
+    <div class="event-contact-container row">
+      <div class="col"></div>
+      <div class="col col-53 event-contact" ui-sref="event.write" touched>
+      </div>
+      <div class="col"></div>
+    </div>
+
+    <ul class="list">
+      <!-- list -->
+      <li ng-repeat="post in posts" ng-click="goTo(post);" touched>
+        <div class="row">
+          <div class="col col-4"></div>
+          <div class="col">
+            <h3>
+              {{post.title}}
+            </h3>
+            <p><span>{{post.createdBy}}</span> / {{post.createdAt}}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <ion-infinite-scroll
+      ng-if="moreData()"
+      immediate-check="false"
+      on-infinite="loadMore()"
+      distance="1%">
+    </ion-infinite-scroll>
+
+
+
+
+
+
+
+  </ion-content>
+</ion-view>

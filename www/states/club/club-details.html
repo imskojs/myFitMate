@@ -1,0 +1,53 @@
+<ion-view id="club-details">
+
+  <ion-nav-bar class="bar-positive" align-title="center">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon icon ion-android-arrow-back" ui-sref="findFit.map" nav-direction="back"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content>
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+      <ion-slide>
+        <div class="box blue"><img ng-src="{{currentContent.images[0]}}" alt="slider 1"></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow"><img ng-src="{{currentContent.images[0]}}" alt="slider 2"></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box pink"><img ng-src="{{currentContent.images[0]}}" alt="slider 3"></div>
+      </ion-slide>
+    </ion-slide-box>
+
+    <div class="row">
+      <div class="col"></div>
+      <div class="col col-92">
+        <h2>{{ currentContent.title }}</h2>
+
+        <div class="row contact">
+          <div class="col" ng-click="call(currentContent.phone)" touched><h3><i class="phone absolute"></i>전화하기</h3></div>
+          <div class="col right" ng-click="write();" touched><h3><i class="note absolute"></i>연락받기</h3></div>
+        </div>
+
+        <div class="row border-bottom main-category">
+          <div class="col"><h4>주 분야</h4></div>
+          <div class="col col-68">
+              <h3>{{ currentContent.category | toKorean}}</h3>
+          </div>
+          <div class="col"></div>
+        </div>
+
+        <h4>소개</h4>
+        <p class="border-bottom">{{ currentContent.content }}</p>
+        <h4>주소 / 찾아가는 길</h4>
+        <p>{{ currentContent.address }}</p>
+
+        <div class="daum-map-container" daum touched>
+        </div>
+
+      </div>
+      <div class="col"></div>
+    </div>
+
+  </ion-content>
+</ion-view>

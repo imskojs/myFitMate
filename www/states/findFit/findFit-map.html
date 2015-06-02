@@ -1,0 +1,42 @@
+<ion-view view-title="헬스장 찾기" id="findFit-map">
+
+  <ion-nav-bar class="bar-positive" align-title="center">
+    <ion-nav-buttons side="left" nav-direction="back">
+      <button class="button button-icon icon ion-android-arrow-back" ui-sref="main"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-pinpoint" ng-click="findMe()"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-header-bar class="bar bar-subheader">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col col-62 search">
+        <i class="search-icon absolute"></i> 
+        <input class="absolute sub-header-search"
+          type="search"
+          placeholder="찾으실 지역을 검색하세요"
+          ng-model="search.place"
+          enter
+          ng-model-options="{ updateOn: 'none'}"
+        >
+      </div>
+      <div class="col"></div>
+    </div>
+  </ion-header-bar>
+
+
+
+
+  <ion-pane class="pinky">
+    
+  </ion-pane>
+  <ion-content data-tap-disabled="true" scroll="false">
+
+    <div class="daum-map-container">
+      
+    </div>
+
+  </ion-content>
+</ion-view>
