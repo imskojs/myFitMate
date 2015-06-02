@@ -33,18 +33,34 @@ h1, h2, h3, h4, h5, h6, p {
   opacity: 0.5 !important;
   background-color: rgba(0, 0, 0, 0.1);
 }
-
+.pinky {
+  background: #f14182 !important;
+  height: 15.5vw;
+  width: 100%;
+}
 /**************************************/
 /***************HEADER*****************/
 /**************************************/
 /* ion-nav-bar background style */
 /* header bar background*/
+.bar.bar-positive {
+  border: 0;
+  background-image: none;
+}
 .bar-positive .nav-bar-block ion-header-bar{
   background-color: #f14182;
   height: 15.5vw;
   padding: 0;
   border: 0;
   margin: 0;
+}
+/*prevent FOUC during transition.*/
+ion-view.pane {
+  /*background-color: #f14182;*/
+}
+ion-content {
+  /*background: white;*/
+  /*background-color: white;*/
 }
 .transparent-background .nav-bar-block ion-header-bar {
     background-color: transparent;
@@ -170,9 +186,12 @@ h1, h2, h3, h4, h5, h6, p {
   stroke: #f14182;
   fill: #f14182;
 }
-#fitMate-list {
+#fitMate-list ion-pane{
   background: url('../img/06_board/fitmate/1080x1920/bg_board_page.png') no-repeat;
   background-size: cover;
+}
+#fitMate-list ion-content {
+  background: transparent;
 }
 #fitMate-write {
   background: url('../img/06_board/fitmate/1080x1920/bg_write_page.png') no-repeat;
@@ -250,6 +269,83 @@ ion-content.has-subheader {
   color: #2e4b96;
   font-size: 3.5vw;
   display: inline;
+}
+
+/************* app specific side menu left style ***********/
+.menu.menu-left {
+  background: #3b3b4a;
+}
+.side-header {
+  background: transparent;
+  margin:0;
+  padding:0;
+  padding-left: 4vw;
+  height: 11vw;
+}
+.side-header .side-title {
+  color: white;
+  height: 11vw;
+  line-height: 11vw;
+  font-size: 6vw;
+}
+.bar.bar-subheader.side-subheader {
+  top: 11vw;
+  background: #272730;
+}
+.side-subheader .settings {
+  text-align: left !important;
+  padding-left: 4vw;
+  font-size: 4vw;
+  color: #f24182;
+}
+.side-content {
+  top: 22vw !important;
+}
+.side-content ul li {
+  padding-left: 4vw;
+}
+.side-content .sub-title {
+  margin-top: 2vw;
+  background: #272730;
+  color: #3de3be;
+  height: 10vw;
+  line-height: 10vw;
+  margin-bottom: 4vw;
+}
+.side-content .setting-item {
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+  color: white;
+}
+.side-footer {
+  background: #272730;
+  height: 16vw;
+  padding: 0;
+  margin: 0;
+  padding-left: 2vw;
+}
+.side-footer .col:first-of-type {
+  border-right: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.side-footer .col:first-of-type .log-out{
+  width: 10.4vw;
+  content: url('../img/03_main_page/1080x1920/icon_sidemenu_logout.png') no-repeat;
+}
+.side-footer .col:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.side-footer .applicat{
+  width: 27vw;
+  content: url('../img/03_main_page/1080x1920/icon_sidemenu_watermark.png') no-repeat;
+}
+.side-content li.clicked {
+  background: #4f4f63;
+  color: #f14182;
 }
 
 /************* General form style************/
@@ -563,6 +659,9 @@ ion-content.has-subheader {
   background: url(../img/03_main_page/1080x1920/screen_background.png) no-repeat;
   background-size: cover;
 }
+#main .bar-positive .nav-bar-block ion-header-bar {
+  background-color: transparent;
+}
 
 #main ion-pane.main-top-bg {
   background: url(../img/03_main_page/1080x1920/bg_main_image.png) no-repeat;
@@ -572,6 +671,7 @@ ion-content.has-subheader {
 }
 #main ion-content {
   top: 90.3vw;
+  background: transparent;
 }
 
 #main .main-mid-bar {
@@ -656,6 +756,7 @@ ion-content.has-subheader {
   margin-top: 4.6vw;
 }
 
+
 /* Resize media */
 @media only screen and (min-aspect-ratio: 5/8) {
   #main ion-pane.main-top-bg {
@@ -677,6 +778,9 @@ ion-content.has-subheader {
     margin-top: 2vw;
   }
 }
+
+
+
 /*************************************************/
 /*****************  findFit  *********************/
 #findFit-map .scroll {
@@ -685,6 +789,9 @@ ion-content.has-subheader {
 #findFit-map .daum-map-container {
   width: 100%;
   height: 100%;
+}
+#findFit-map .pane {
+  background: white;
 }
 .modal {
   background: transparent;
@@ -976,7 +1083,6 @@ ion-content.has-subheader {
   margin-top: 1.5vh;
   margin-bottom: 6vh;
 }
-
 #club .bar.bar-subheader h2{
   color: #73cfda;
 }
@@ -1003,6 +1109,12 @@ ion-content.has-subheader {
 }
 .buttons-container .col {
   padding-top: 9vw;
+}
+#club-details ion-content{
+  background: white;
+}
+#club-write ion-content{
+  background: transparent;
 }
 /*************************************************/
 /***************  init ABSTRACT STATE ***********/

@@ -1,16 +1,18 @@
 <ion-view id="main" view-title="MYFITMATE">
 
-  <!-- Burger on left -->
-<!--    <ion-nav-buttons side="left">
-    <button class="button button-clear" menu-toggle="left">
-      <span class="icon ion-navicon-round"></span>
+<ion-nav-bar class="bar-positive" align-title="center">
+<!-- Burger on left -->
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios-gear-outline" menu-toggle="left">
     </button>
   </ion-nav-buttons>
- -->  
+  
   <!-- Share on right -->
   <ion-nav-buttons side="right">
-    <button class="button button-icon icon ion-android-share-alt"></button>
+    <button class="button button-icon icon ion-android-share-alt" ng-click="share()"></button>
   </ion-nav-buttons>
+
+</ion-nav-bar>
 
   <!-- Non-scrollable content main-container has bg-->
   <ion-pane class="main-top-bg">
@@ -27,7 +29,7 @@
         <div class="col col-90">
           <div class="row">
             <div class="col">
-              <a ui-sref="findFit.map" touched>
+              <a ui-sref="findFit.map" touched nav-direction="forward">
                   <div class="pink-title">
                     <i class="main-dumbell absolute"></i>
                     <p>헬스장 찾기</p>
@@ -39,7 +41,7 @@
          
           <div class="row">
             <div class="col">
-              <a ui-sref="fitMate.list" touched>
+              <a ui-sref="fitMate.list" touched nav-direction="forward">
                   <div class="pink-title">
                     <i class="main-location absolute"></i>
                     <p> &nbsp;&nbsp;&nbsp;&nbsp;FIT MATE</p>
@@ -49,7 +51,7 @@
             </div>
             <div class="col col-5"></div>
             <div class="col">
-              <a ui-sref="fitInfo.list" touched>
+              <a ui-sref="fitInfo.list" touched nav-direction="forward">
                   <div class="pink-title">
                     <i class="main-info absolute"></i>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;운동 정보</p>
@@ -61,7 +63,7 @@
           
           <div class="row">
             <div class="col">
-              <a ui-sref="consult.list" touched>
+              <a ui-sref="consult.list" touched nav-direction="forward">
                   <div class="pink-title">
                     <i class="main-qa absolute"></i>
                     <p>&nbsp;&nbsp;&nbsp;상담 하기</p>
@@ -71,7 +73,7 @@
             </div>
             <div class="col col-5"></div>
             <div class="col">
-              <a ui-sref="event.list" touched>
+              <a ui-sref="event.list" touched nav-direction="forward">
                   <div class="pink-title">
                     <i class="main-event absolute"></i>
                     <p>&nbsp;&nbsp;&nbsp;이벤트</p>

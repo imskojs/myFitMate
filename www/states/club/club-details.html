@@ -1,8 +1,11 @@
 <ion-view id="club-details">
-  <ion-nav-bar class="bar-positive">
-      <ion-nav-back-button>
-      </ion-nav-back-button> 
+
+  <ion-nav-bar class="bar-positive" align-title="center">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon icon ion-android-arrow-back" ui-sref="findFit.map" nav-direction="back"></button>
+    </ion-nav-buttons>
   </ion-nav-bar>
+
   <ion-content>
     <ion-slide-box on-slide-changed="slideHasChanged($index)">
       <ion-slide>
