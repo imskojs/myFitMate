@@ -498,6 +498,7 @@ ion-content.has-subheader {
 }
 .detail-comment-container .detail-comments {
   margin-top: 1.9vw;
+  margin-bottom: 3vw;
 }
 .detail-comment-container .detail-comments .input-container .input textarea{
   width: 100%;
@@ -671,11 +672,12 @@ ion-content.has-subheader {
   height: 90.3vw;
 }
 #main ion-content {
-  top: 90.3vw;
+  top: 100.8vw;
   background: transparent;
 }
 
 #main .main-mid-bar {
+  top: 90.3vw;
   height: 10.5vw;
   background: url(../img/03_main_page/1080x1920/bar_under_image.png);
   background-size: cover;
@@ -751,10 +753,11 @@ ion-content.has-subheader {
   margin-top: 4vw;
 }
 #main .main-content .row:nth-of-type(2){
-  margin-top: 9vw;
+  margin-top: 5vw;
 }
 #main .main-content .row:nth-of-type(3){
   margin-top: 4.6vw;
+  margin-bottom: 30px;
 }
 
 
@@ -882,13 +885,13 @@ ion-content.has-subheader {
 /*************** fitMate ABSTRACT STATE***********/
 #fitMate .category-ul {
   /* long container inside ion-scroll element */
-  width: 400vw;
+  width: 455vw;
   background: #434252;
 }
 #fitMate .category-li {
   /* list of items inside long container */
   display: inline-block;
-  width: 16vw;
+  width: 18vw;
   text-align: center;
 }
 #fitMate .category-li h2 {
@@ -897,6 +900,7 @@ ion-content.has-subheader {
   line-height: 9.82vw;
   color: #73cfda;
   font-weight: normal;
+  font-size: 4.8vw;
 }
 #fitMate .active {
   /* activated style, border does not change height as li has box-model: borderbox; */
@@ -911,12 +915,12 @@ ion-content.has-subheader {
 /*************************************************/
 /*************** fitInfo ABSTRACT STATE***********/
 #fitInfo .category-ul {
-  width: 168vw;
+  width: 185vw;
   background: #434252;
 }
 #fitInfo .category-li {
   display: inline-block;
-  width: 28vw;
+  width: 30vw;
   text-align: center;
 }
 #fitInfo .category-li h2 {
@@ -924,6 +928,7 @@ ion-content.has-subheader {
   font-weight: normal;
   line-height: 9.82vw;
   height: 9.82vw;
+  font-size: 4.8vw;
 }
 #fitInfo .active {
   background: white;

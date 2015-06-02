@@ -5,7 +5,7 @@ $scope, Data, Utility, $timeout, $ionicModal, $state, $ionicNavBarDelegate
 var $ = Utility;
 // current location.
 var markers = [];
-var windowWidth = angular.element('body').width();
+var windowWidth = angular.element('html').width();
 // Marker style.
 var markerWidth = windowWidth * .111;
 var markerHeight = windowWidth * .055;
